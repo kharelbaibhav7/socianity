@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import axios from "axios";
 
 const Login = () => {
     let [data, setData] = useState({})
@@ -15,6 +16,7 @@ const Login = () => {
             try {
                 let result = await axios.post("http://localhost:8000/api/users/login", data);
                 localStorage.setItem("token", result.data.token);
+                console.log(data)
             } catch (error) {
                 console.log(error.message);
             }        

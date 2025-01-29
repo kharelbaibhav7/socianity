@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 
 const Signup = () => {
@@ -16,6 +17,7 @@ const Signup = () => {
         try {
             let result = await axios.post("http://localhost:8000/api/users/", data);
             localStorage.setItem("token", result.data.token);
+            console.log(result)
         } catch (error) {
             console.log(error.message);
         }        
