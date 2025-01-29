@@ -20,7 +20,6 @@ function App() {
       <GlobalVariableContext.Provider value={{ token: token, setToken: setToken }}>
         <NavBar />
         <MyRoutes />
-        <EventsPage/>   {/* Just for test */}
       </GlobalVariableContext.Provider>
     </>
   )
