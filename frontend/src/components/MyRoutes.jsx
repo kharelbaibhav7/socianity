@@ -40,7 +40,7 @@ const MyRoutes = () => {
                                 element={<SpecificEventPage></SpecificEventPage>}
                             ></Route>
                             <Route
-                                path="fundraising"
+                                path="fundraisings"
                                 element={<Fundraisings></Fundraisings>}
                             ></Route>
                             <Route

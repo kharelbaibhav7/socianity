@@ -21,7 +21,7 @@ const NavBar = () => {
                     <NavLink to="/events" style={{ marginRight: "20px" }}>
                         Events
                     </NavLink>
-                    <NavLink to="/raise-funds" style={{ marginRight: "20px" }}>
+                    <NavLink to="/fundraisings" style={{ marginRight: "20px" }}>
                         Fundraisings
                     </NavLink>
                     <NavLink to="/contributions" style={{ marginRight: "20px" }}>
