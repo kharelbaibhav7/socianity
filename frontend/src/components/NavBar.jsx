@@ -40,10 +40,10 @@ const NavBar = () => {
                     Home
                 </NavLink>
                 <NavLink to="/register" style={{ marginRight: "20px" }}>
-                    Register admin
+                    Register
                 </NavLink>
                 <NavLink to="/login" style={{ marginRight: "20px" }}>
-                    Admin login
+                    Login
                 </NavLink>
             </>}
 

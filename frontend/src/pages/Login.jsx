@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { GlobalVariableContext } from "../App";
 
 const Login = () => {
     let [data, setData] = useState({})
+    let navigate = useNavigate()
+    let { token, setToken } = useContext(GlobalVariableContext)
 
     let handleData = (e) => {
         setData({
@@ -16,6 +20,8 @@ const Login = () => {
         try {
             let result = await axios.post("http://localhost:8000/api/users/login", data);
             localStorage.setItem("token", result.data.token);
+            setToken(result.data.token)
+            navigate("/")
             console.log(data)
         } catch (error) {
             console.log(error.message);
