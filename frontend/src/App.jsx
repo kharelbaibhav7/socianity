@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Signup from './components/Signup'
 import Login from "./components/Login"
-import "./styles.css";
+import "./components/styles.css";
 
 
 function App() {
