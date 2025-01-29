@@ -19,10 +19,10 @@ const NavBar = () => {
                         Home
                     </NavLink>
                     <NavLink to="/events" style={{ marginRight: "20px" }}>
-                        event
+                        Events
                     </NavLink>
                     <NavLink to="/raise-funds" style={{ marginRight: "20px" }}>
-                        fundraising
+                        Fundraisings
                     </NavLink>
                     <NavLink to="/contributions" style={{ marginRight: "20px" }}>
                         Contribution
