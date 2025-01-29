@@ -7,8 +7,8 @@ const Signup = () => {
 
     let handleData = (e) => {
         setData({
-        ...data, 
-        [e.target.name] : e.target.value
+            ...data,
+            [e.target.name]: e.target.value
         })
     }
 
@@ -20,7 +20,7 @@ const Signup = () => {
             console.log(result)
         } catch (error) {
             console.log(error.message);
-        }        
+        }
     }
 
     return (
@@ -32,13 +32,13 @@ const Signup = () => {
                 <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required onChange={handleData} />
 
                 <label htmlFor="phone">Phone</label>
-                <input type="tel" id="phone" name="phoneNumber" placeholder="Enter your phone number" required onChange={handleData}/>
+                <input type="tel" id="phone" name="phoneNumber" placeholder="Enter your phone number" required onChange={handleData} />
 
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required onChange={handleData}/>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required onChange={handleData} />
 
                 <label htmlFor="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required onChange={handleData}/>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required onChange={handleData} />
 
                 <button type="submit">Sign Up</button>
             </form>
