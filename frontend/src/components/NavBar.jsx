@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { GlobalVariableContext } from "../App";
 
 const NavBar = () => {
 
-    // let token = localStorage.getItem("token");
-    let token = ""
+
+    let global = useContext(GlobalVariableContext)
+    let token = global.token
 
 
     return (

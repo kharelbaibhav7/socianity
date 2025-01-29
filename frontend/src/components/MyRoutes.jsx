@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import EventsPage from "../pages/Event/EventsPage";
 import SpecificEventPage from "../pages/Event/SpecificEventPage";
@@ -7,6 +7,8 @@ import SpecificFundraisings from "../pages/Fundraising/SpecificFundraisings";
 import HomePage from "../pages/HomePage";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
+import { GlobalVariableContext } from "../App";
+import Logout from "../pages/Logout";
 
 
 // import SpecificEventPage from "../pages/SpecificEventPage";
@@ -19,7 +21,8 @@ import Login from "../pages/Login";
 const MyRoutes = () => {
 
     //   let { token, setToken } = useContext(GlobalVariableContext)
-    let token = ""
+    let { token, setToken } = useContext(GlobalVariableContext)
+
 
     return (
         <div>
@@ -45,7 +48,7 @@ const MyRoutes = () => {
                                 element={<SpecificFundraisings></SpecificFundraisings>}
                             ></Route>
 
-                            <Route path="logout" element={<div>Logout</div>}>
+                            <Route path="logout" element={<Logout></Logout>}>
 
                             </Route>
 
@@ -54,6 +57,7 @@ const MyRoutes = () => {
                         </>
                         :
                         <>
+                            <Route index element={<HomePage></HomePage>}></Route>
                             <Route
                                 path="register"
                                 element={<Signup></Signup>}

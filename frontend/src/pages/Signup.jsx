@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 const Signup = () => {
     let [data, setData] = useState({})
+    let navigate = useNavigate()
+
 
     let handleData = (e) => {
         setData({
@@ -17,7 +20,10 @@ const Signup = () => {
         try {
             let result = await axios.post("http://localhost:8000/api/users/", data);
             localStorage.setItem("token", result.data.token);
+
             console.log(result)
+            navigate("/")
+
         } catch (error) {
             console.log(error.message);
         }
