@@ -32,6 +32,7 @@
   }
   
   h1, h2 {
+    color:black;
     font-size: 3.2em;
     line-height: 1.1;
   }
@@ -64,6 +65,7 @@
   }
   
   label {
+    color:black;
     font-size: 1.2em;
   }
   
