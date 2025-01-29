@@ -1,6 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
+let navigate = useNavigate()
 
 function EventsPage() {
     const [events, setEvents] = useState([]); 
@@ -21,7 +24,7 @@ function EventsPage() {
   return (
     <div className='container'>
         {events.map(event => (
-            <div key={event._id}>
+            <div key={event._id} onClick={navigate(`http://localhost:8000/api/events/${event._id}`)}>
                 <h2>{event.name}</h2>
                 <p>-By {event.organizer.fullName}</p>
             </div>

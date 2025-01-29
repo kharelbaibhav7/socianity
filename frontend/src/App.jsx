@@ -5,7 +5,6 @@ import "./pages/styles.css";
 import NavBar from './components/NavBar';
 import { Routes } from 'react-router-dom';
 import MyRoutes from './components/MyRoutes';
-import EventsPage from './pages/Event/EventsPage';
 
 
 export let GlobalVariableContext = createContext()
@@ -20,7 +19,6 @@ function App() {
       <GlobalVariableContext.Provider value={{ token: token, setToken: setToken }}>
         <NavBar />
         <MyRoutes />
-        <EventsPage/>
       </GlobalVariableContext.Provider>
     </>
   )
