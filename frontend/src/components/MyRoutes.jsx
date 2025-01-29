@@ -9,6 +9,7 @@ import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import { GlobalVariableContext } from "../App";
 import Logout from "../pages/Logout";
+import PostPage from "../pages/PostPage";
 
 
 // import SpecificEventPage from "../pages/SpecificEventPage";
@@ -46,6 +47,10 @@ const MyRoutes = () => {
                             <Route
                                 path="fundraisings/:id"
                                 element={<SpecificFundraisings></SpecificFundraisings>}
+                            ></Route>
+                            <Route
+                                path="post"
+                                element={<PostPage></PostPage>}
                             ></Route>
 
                             <Route path="logout" element={<Logout></Logout>}>

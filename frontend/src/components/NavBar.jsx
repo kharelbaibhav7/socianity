@@ -30,6 +30,9 @@ const NavBar = () => {
                     <NavLink to="/forum" style={{ marginRight: "20px" }}>
                         Forum
                     </NavLink>
+                    <NavLink to="/post" style={{ marginRight: "20px" }}>
+                        Post
+                    </NavLink>
                     <NavLink to="/logout" style={{ marginRight: "20px" }}>
                         Logout
                     </NavLink>
