@@ -52,11 +52,11 @@ const MyRoutes = () => {
                                 element={<SpecificFundraisings></SpecificFundraisings>}
                             ></Route>
                             <Route
-                                path="contribution"
+                                path="contributions"
                                 element={<ContributionPage></ContributionPage>}
                             ></Route>
                             <Route
-                                path="contribution/:id"
+                                path="contributions/:id"
                                 element={<SpecificContributionPage></SpecificContributionPage>}
                             ></Route>
                             <Route
