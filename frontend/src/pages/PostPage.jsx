@@ -9,7 +9,7 @@ const PostPage = () => {
         <div>
             <ul>
                 <li><Link to="/post/event"> Organize event </Link></li>
-                <li><Link to="/fundrasings">Raise donation</Link></li>
+                <li><Link to="/post/fundraising">Raise donation</Link></li>
                 <li><Link to="/contributions">Read about social contributors</Link></li>
             </ul>
         </div>
