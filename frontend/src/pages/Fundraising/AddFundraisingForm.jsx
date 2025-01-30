@@ -32,10 +32,10 @@ const AddFundraisingForm = () => {
                 }
             })
             console.log(result)
-            // setTitle("")
-            // setTarget("")
-            // setPhoneNumber("")
-            // setDescription("")
+            setTitle("")
+            setTarget("")
+            setPhoneNumber("")
+            setDescription("")
         } catch (error) {
             console.log(error)
         }
