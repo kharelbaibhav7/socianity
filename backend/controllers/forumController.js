@@ -1,5 +1,6 @@
 import asyncHandler from "express-async-handler";
 import Forum from "../models/forumModel.js";
+import expressAsyncHandler from "express-async-handler";
 
 // @desc    Create a new forum post
 // @route   POST /api/forums
@@ -81,6 +82,17 @@ const postReply = asyncHandler(async (req, res) => {
   }
 });
 
+const viewAllReply = expressAsyncHandler(async (req, res, next) => {
+  const forumPost = await Forum.findById(req.params.id);
+
+  if (forumPost) {
+    res.json(forumPost.replies);
+  } else {
+    res.status(404);
+    throw new Error("Forum post not found");
+  }
+});
+
 // @desc    Like a forum post
 // @route   POST /api/forums/:id/like
 // @access  Private
@@ -108,4 +120,5 @@ export {
   deleteForumPost,
   postReply,
   likeForumPost,
+  viewAllReply,
 };

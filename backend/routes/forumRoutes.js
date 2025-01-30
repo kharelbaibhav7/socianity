@@ -15,6 +15,7 @@ router.route("/").post(protect, createForumPost).get(getAllForumPosts);
 router.route("/:id").get(getForumPostById).delete(protect, deleteForumPost);
 
 router.route("/:id/reply").post(protect, postReply);
+router.route("");
 
 router.route("/:id/like").post(protect, likeForumPost);
 
