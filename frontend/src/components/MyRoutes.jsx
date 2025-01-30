@@ -10,6 +10,7 @@ import Login from "../pages/Login";
 import { GlobalVariableContext } from "../App";
 import Logout from "../pages/Logout";
 import PostPage from "../pages/PostPage";
+import AddEventForm from "../pages/Event/AddEventForm";
 
 
 // import SpecificEventPage from "../pages/SpecificEventPage";
@@ -56,6 +57,13 @@ const MyRoutes = () => {
                             <Route path="logout" element={<Logout></Logout>}>
 
                             </Route>
+
+                            <Route path="post/event" element={<AddEventForm></AddEventForm>}>
+                            </Route>
+
+                            <Route path="post/fundraisings" element={<AddEventForm></AddEventForm>}>
+                            </Route>
+
 
                             <Route path="*" element={<div>404 PAGE</div>}></Route>
 

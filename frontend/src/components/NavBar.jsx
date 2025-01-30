@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { GlobalVariableContext } from "../App";
+import "./NavBar.css"
 
 const NavBar = () => {
 
@@ -10,11 +11,16 @@ const NavBar = () => {
 
 
     return (
-        <div>
-
+        <div className="container">
+            <div className="logoAndNameContainer">
+                <div className="logoContainer">
+                    <img src="" alt="" />
+                </div>
+                <p className="name">Socianity</p>
+            </div>
             {token ? (
 
-                <>
+                <div className="navOptions">
                     <NavLink to="/" style={{ marginRight: "20px" }}>
                         Home
                     </NavLink>
@@ -36,9 +42,9 @@ const NavBar = () => {
                     <NavLink to="/logout" style={{ marginRight: "20px" }}>
                         Logout
                     </NavLink>
-                </>
+                </div>
 
-            ) : <>
+            ) : <div>
                 <NavLink to="/" style={{ marginRight: "20px" }}>
                     Home
                 </NavLink>
@@ -48,10 +54,7 @@ const NavBar = () => {
                 <NavLink to="/login" style={{ marginRight: "20px" }}>
                     Login
                 </NavLink>
-            </>}
-
-
-
+            </div>}
         </div>
     );
 };

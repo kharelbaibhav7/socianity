@@ -1,0 +1,14 @@
+.container {
+  width: 100vw;
+  display: flex;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logoAndNameContainer {
+  display: flex;
+  align-items: center;
+}
+
+
