@@ -17,7 +17,6 @@ function App() {
       <GlobalVariableContext.Provider value={{ token: token, setToken: setToken }}>
         <NavBar />
         <MyRoutes />
-
       </GlobalVariableContext.Provider>
     </>
   )
