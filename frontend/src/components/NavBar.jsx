@@ -14,7 +14,7 @@ const NavBar = () => {
         <div className="container">
             <div className="logoAndNameContainer">
                 <div className="logoContainer">
-                    <img src="" alt="" />
+                    <img src="../../images/logo.jpeg" alt="" />
                 </div>
                 <p className="name">Socianity</p>
             </div>
