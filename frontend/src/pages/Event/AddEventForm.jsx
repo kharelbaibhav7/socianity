@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 const AddEventForm = () => {
 
@@ -22,21 +23,22 @@ const AddEventForm = () => {
 
             let result = await axios({
                 method: 'post',
-                url: `localhost:8000/api/events`,
-                data: data
+                url: `http://localhost:8000/api/events`,
+                data: data,
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
             })
-            console.log(result)
-            // setFullName("")
-            // setEmail("")
-            // setPassword("")
-            // setDob("")
-            // setGender("")
+            // console.log(result)
+            setName("")
+            setDate("")
+            setTime("")
+            setDescription("")
         } catch (error) {
-            console.log(error.response.data.message)
+            console.log(error)
         }
-
-
     }
+
 
     return (
         <div>
