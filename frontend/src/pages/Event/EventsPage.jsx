@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 function EventsPage() {
-  const [events, setEvents] = useState([]); 
+  const [events, setEvents] = useState([]);
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function EventsPage() {
     };
 
     fetchEvents();
-  }, []); 
+  }, []);
 
   const handleEventClick = (id) => {
     navigate(`/events/${id}`);
