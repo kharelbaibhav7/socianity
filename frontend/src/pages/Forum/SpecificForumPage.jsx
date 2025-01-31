@@ -1,10 +1,24 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const SpecificForumPage = () => {
     let { id } = useParams()
     let [Forum, setForum] = useState({})
+    let navigate = useNavigate()
+
+    const onLike = async () => {
+        let result = await axios({
+            method: 'post',
+            url: `http://localhost:8000/api/forums/${id}/like`,
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`
+            }
+        })
+        console.log(result)
+
+
+    }
 
     useEffect(() => {
         const fetchForum = async () => {
@@ -25,7 +39,8 @@ const SpecificForumPage = () => {
             <h2>-By {Forum.postedBy?.fullName || "Anonymous"}</h2>
             <p>{Forum.description}</p>
 
-            <button onClick={() => { console.log("like") }}>Like</button> // remaining
+            <button onClick={onLike}>Like</button>
+            <p>Total Likes: {Forum.likes?.length || 0}</p>
 
         </div>
     )

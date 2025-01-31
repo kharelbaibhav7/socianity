@@ -97,19 +97,36 @@ const viewAllReply = expressAsyncHandler(async (req, res, next) => {
 // @route   POST /api/forums/:id/like
 // @access  Private
 const likeForumPost = asyncHandler(async (req, res) => {
-  const forumPost = await Forum.findById(req.params.id);
-
-  if (forumPost) {
-    if (forumPost.likes.includes(req.user._id)) {
-      res.status(400);
-      throw new Error("Forum post already liked");
+  try {
+    try {
+      const forumPost = await Forum.findById(req.params.id);
+      // res.json(forumPost);
+    } catch (error) {
+      res.json({
+        success: false,
+        message: "No forum post found from this id",
+      });
     }
-    forumPost.likes.push(req.user._id);
-    await forumPost.save();
-    res.json({ message: "Forum post liked" });
-  } else {
-    res.status(404);
-    throw new Error("Forum post not found");
+    const forumPost = await Forum.findById(req.params.id);
+    if (forumPost.likes.includes(req.user._id)) {
+      let updateForumPost = await Forum.findByIdAndUpdate(
+        req.params.id,
+        {
+          $pull: { likes: req.user._id },
+        },
+        { new: true }
+      );
+      res.json({ message: "Forum post unliked", result: updateForumPost });
+    } else {
+      forumPost.likes.push(req.user._id);
+      await forumPost.save();
+      res.json({ message: "Forum post liked", result: forumPost });
+    }
+  } catch (error) {
+    res.json({
+      success: false,
+      message: error.message,
+    });
   }
 });
 
