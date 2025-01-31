@@ -58,8 +58,7 @@ const HomePage = () => {
 
 
             {/* <button className="main_button">Get Started</button> */}
-            <div className="absolute bottom-0 w-full h-[30vh] bg-gradient-to-t from-orange-500 to-white z-[-1]">
-            </div>
+            
         </div>
     )
 }
