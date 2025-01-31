@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { GlobalVariableContext } from "../App";
 import { Eye, EyeOff, Lock, Mail, MessageSquare, User } from "lucide-react";
-import AuthImagePattern from "../components/AuthImagePattern";
 
 
 const Signup = () => {
@@ -14,7 +13,7 @@ const Signup = () => {
     let navigate = useNavigate()
 
 
-    let handleData = (e) => {
+    const handleData = (e) => {
         setData({
             ...data,
             [e.target.name]: e.target.value
@@ -35,127 +34,123 @@ const Signup = () => {
         }
     }
 
+
     return (
-        <div className="min-h-screen grid lg:grid-cols-2">
-            <div className="flex flex-col justify-center items-center p-6 sm:p-12">
-                <div className='w-full max-w-md space-y-8'>
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 to-background p-6">
+            <div className="w-full max-w-md shadow-2xl rounded-lg bg-white p-8">
+                <div className="text-center">
+                    <div className="flex justify-center mb-4">
+                        <div className="size-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                            <MessageSquare className="size-8 text-primary" />
+                        </div>
+                    </div>
+                    <h2 className="text-3xl font-bold mb-2">Create Account</h2>
+                    <p className="text-muted-foreground mb-6">
+                        Get started with your free account
+                    </p>
+                </div>
 
-
-                    <div className="text-center mb-8">
-                        <div className="flex flex-col items-center gap-2 group">
-                            <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center froup-hover:bg-primary/20 transition colors">
-                                <MessageSquare className="size-6 text-primary" />
-                            </div>
-
-                            <h1 className="text-2xl font-bold mt-2">Create Account</h1>
-                            <p className="text-base-content/60">Get started with your free account</p>
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                    {/* Full Name Input */}
+                    <div className="space-y-2">
+                        <label htmlFor="name" className="block text-sm font-medium">Full Name</label>
+                        <div className="relative">
+                            <User className="absolute left-3 top-1/2 -translate-y-1/2 size-5 text-muted-foreground" />
+                            <input
+                                type="text"
+                                id="name"
+                                name="fullName"
+                                placeholder="Elon Musk"
+                                className="w-full pl-10 p-2 border rounded-md"
+                                required
+                                onChange={handleData}
+                            />
                         </div>
                     </div>
 
-                    <form className="space-y-6" onSubmit={handleSubmit}>
-
-                        {/* Full Name section */}
-                        <div className="form-control">
-                            <label htmlFor="name" className="label">
-                                <span className='label-text font-medium'>Full Name</span>
-                            </label>
-                            <div className="relative">
-                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <User className="size-5 text-base-content/40" />
-                                </div>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    required
-                                    name="fullName"
-                                    className={`input input-bordered w-full pl-10`}
-                                    placeholder='Elon Musk'
-                                    onChange={handleData} />
-                            </div>
+                    {/* Phone Input */}
+                    <div className="space-y-2">
+                        <label htmlFor="phone" className="block text-sm font-medium">Phone Number</label>
+                        <div className="relative">
+                            <User className="absolute left-3 top-1/2 -translate-y-1/2 size-5 text-muted-foreground" />
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phoneNumber"
+                                placeholder="Enter your phone number"
+                                className="w-full pl-10 p-2 border rounded-md"
+                                required
+                                onChange={handleData}
+                            />
                         </div>
-
-
-                        <label htmlFor="phone">Phone</label>
-                        <input type="tel" id="phone" name="phoneNumber" placeholder="Enter your phone number" required onChange={handleData} />
-
-                        {/*Phone section*/}
-
-
-                        {/* Email section */}
-                        <div className="form-control">
-                            <label className="label" htmlFor="email">
-                                <span className='label-text font-medium'>Email</span>
-                            </label>
-                            <div className="relative">
-                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <Mail className="size-5 text-base-content/40" />
-                                </div>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    className={`input input-bordered w-full pl-10`}
-                                    placeholder='exaple@example.com'
-                                    required
-                                    onChange={handleData} />
-                            </div>
-                        </div>
-
-                        {/* Password section */}
-                        <div className="form-control">
-                            <label className="label" htmlFor="[asswprd">
-                                <span className="label-text font-medium">Password</span>
-                            </label>
-                            <div className="relative">
-                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <Lock className="size-5 text-base-content/40" />
-                                </div>
-                                <input
-                                    type={showPassword ? "text" : "password"}
-                                    id="password"
-                                    name="password"
-                                    className={`input input-bordered w-full pl-10`}
-                                    placeholder="••••••••"
-                                    required
-                                    onChange={handleData}
-                                />
-                                <button
-                                    type="button"
-                                    className="absolute inset-y-0 right-0 pr-3 flex items-center"
-                                    onClick={() => setShowPassword(!showPassword)}
-                                >
-                                    {showPassword ? (
-                                        <EyeOff className="size-5 text-base-content/40" />
-                                    ) : (
-                                        <Eye className="size-5 text-base-content/40" />
-                                    )}
-                                </button>
-                            </div>
-                        </div>
-
-
-                        <button type="submit">Sign Up</button>
-                    </form>
-
-
-                    <div className="text-center">
-                        <p className="text-base-content/60">
-                            Already have an account?{" "}
-                            <Link to="/login" className="link link-primary">
-                                Sign in
-                            </Link>
-                        </p>
                     </div>
 
+                    {/* Email Input */}
+                    <div className="space-y-2">
+                        <label htmlFor="email" className="block text-sm font-medium">Email</label>
+                        <div className="relative">
+                            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-5 text-muted-foreground" />
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="example@example.com"
+                                className="w-full pl-10 p-2 border rounded-md"
+                                required
+                                onChange={handleData}
+                            />
+                        </div>
+                    </div>
 
+                    {/* Password Input */}
+                    <div className="space-y-2">
+                        <label htmlFor="password" className="block text-sm font-medium">Password</label>
+                        <div className="relative">
+                            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 size-5 text-muted-foreground" />
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                id="password"
+                                name="password"
+                                placeholder="••••••••"
+                                className="w-full pl-10 pr-12 p-2 border rounded-md"
+                                required
+                                onChange={handleData}
+                            />
+                            <button
+                                type="button"
+                                className="absolute right-3 top-1/2 -translate-y-1/2"
+                                onClick={() => setShowPassword(!showPassword)}
+                            >
+                                {showPassword ? (
+                                    <EyeOff className="size-5 text-muted-foreground" />
+                                ) : (
+                                    <Eye className="size-5 text-muted-foreground" />
+                                )}
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Submit Button */}
+                    <button
+                        type="submit"
+                        className="w-full p-2 bg-black text-white rounded-md hover:bg-primary-dark transition-colors"
+                    >
+                        Sign Up
+                    </button>
+                </form>
+
+                {/* Login Link */}
+                <div className="text-center mt-6">
+                    <p className="text-sm text-muted-foreground">
+                        Already have an account?{" "}
+                        <a href="/login" className="text-primary hover:underline">
+                            Sign in
+                        </a>
+                    </p>
                 </div>
             </div>
-
-            <AuthImagePattern
-                title="Join our community"
-                subtitle="Connect with friends, share moments, and stay in touch with your loved ones."
-            />
         </div>
     );
 };
+
 export default Signup;
