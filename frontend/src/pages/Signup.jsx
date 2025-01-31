@@ -133,7 +133,7 @@ const Signup = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full p-2 bg-black text-white rounded-md hover:bg-primary-dark transition-colors"
+                        className="w-full p-2 bg-[#eba06b] text-white rounded-md hover:bg-[#ee7f30] transition-colors"
                     >
                         Sign Up
                     </button>

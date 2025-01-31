@@ -8,7 +8,7 @@ const HomePage = () => {
             <section className="middlePage">
                 <div className="textContainer">
                     <h1 className="main_title bold text-[3rem]">Socianity</h1>
-                    <h2 className="main_slogan text-[1.5rem]">Strengthning for society, Uniting for Change</h2>
+                    <h2 className="main_slogan text-[1.5rem]">Strengthening society, Uniting for Change</h2>
                     <div className="line h-[2px] w-[10vw] bg-emerald-400 mt-1"></div >
                 </div>
                 <button className='mt-[3rem] bg-amber-500 rounded-2xl p-2 text-2xl duration-250 hover:scale-110'>Register Now</button>
