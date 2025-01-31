@@ -20,9 +20,8 @@ const HomePage = () => {
             </div>
 
 
-
             {/* cards part */}
-            <div className="gridContainer grid grid-cols-2 grid-rows-2 gap-3 w-[35vw] h-[45vh] mt-[6rem]">
+            <div className="gridContainer grid grid-cols-2 grid-rows-2 gap-7 columns-3xl w-[50vw] h-[45vh] mt-[6rem]">
                 {/* Event box */}
                 <div className="individualBoxContainer h-full w-full flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1 bg-white shadow-lg rounded-xl duration-250 hover:scale-110 scale:drop-shadow-xl">
                     <div className="imageContainer overflow-hidden">
@@ -66,7 +65,6 @@ const HomePage = () => {
                 </p>
                 <button className='mt-[1rem] bg-amber-500 rounded-2xl p-2 text-2xl duration-250 hover:scale-110'>Let's Get Started</button>
             </div>
-
 
 
 

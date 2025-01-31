@@ -5,16 +5,14 @@ import { GlobalVariableContext } from "../App";
 
 const NavBar = () => {
 
-
     let global = useContext(GlobalVariableContext)
     let token = global.token
 
-
     return (
-        <div className="container w-screen flex h-[5rem] items-center justify-between mt-4 p-2">
+        <div className="container w-screen flex h-[4rem] items-center justify-between m-auto mt-4 p-0 bg-orange-300 rounded-4xl">
             <div className="logoAndNameContainer flex items-center gap-3 h-[5rem]">
                 <div className="logoContainer h-full overflow-hidden">
-                    <img src="../../images/logo.jpeg" alt="" className="h-full w-auto rounded-[100%]"/>
+                    <img src="../../images/logo.png" alt="" className="h-full w-auto rounded-[100%]"/>
                 </div>
                 <p className="name font-[Akaya Kanadaka]">Socianity</p>
             </div>
