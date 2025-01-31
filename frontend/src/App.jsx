@@ -2,7 +2,6 @@ import { createContext, useState } from 'react';
 import MyRoutes from './components/MyRoutes';
 import NavBar from './components/NavBar';
 import "./pages/styles.css";
-import "./App.css"
 
 
 

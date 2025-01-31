@@ -6,7 +6,7 @@ function EventsPage() {
   const [events, setEvents] = useState([]); 
   let navigate = useNavigate();
 
-  useEffect(() => {
+    useEffect(() => {
     const fetchEvents = async () => {
       try {
         const response = await axios.get("http://localhost:8000/api/events/");
@@ -18,13 +18,13 @@ function EventsPage() {
     };
 
     fetchEvents();
-  }, []); 
+      }, []);
 
   const handleEventClick = (id) => {
     navigate(`/events/${id}`);
   };
 
-  return (
+    return (
     <div className='container'>
       {events.map(event => (
         <div key={event._id} onClick={() => handleEventClick(event._id)}>

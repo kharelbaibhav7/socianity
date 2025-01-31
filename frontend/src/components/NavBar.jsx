@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { GlobalVariableContext } from "../App";
-import "./NavBar.css"
+// import "./NavBar.css"
 
 const NavBar = () => {
 
@@ -11,10 +11,10 @@ const NavBar = () => {
 
 
     return (
-        <div className="container">
-            <div className="logoAndNameContainer">
-                <div className="logoContainer">
-                    <img src="../../images/logo.jpeg" alt="" />
+        <div className="container w-screen flex h-[5rem] items-center justify-between mt-4">
+            <div className="logoAndNameContainer flex items-center h-[5rem]">
+                <div className="logoContainer h-full overflow-hidden">
+                    <img src="../../images/logo.jpeg" alt="" className="h-full w-auto"/>
                 </div>
                 <p className="name">Socianity</p>
             </div>
