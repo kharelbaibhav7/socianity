@@ -16,10 +16,10 @@ const NavBar = () => {
                 <div className="logoContainer h-full overflow-hidden">
                     <img src="../../images/logo.jpeg" alt="" className="h-full w-auto rounded-[100%]"/>
                 </div>
-                <p className="name">Socianity</p>
+                <p className="name font-[Akaya Kanadaka]">Socianity</p>
             </div>
             {token ? (
-                <div className="navOptions">
+                <div className="navOptions font-[Roboto]">
                     <NavLink to="/" style={{ marginRight: "20px" }}>
                         Home
                     </NavLink>
@@ -43,7 +43,7 @@ const NavBar = () => {
                     </NavLink>
                 </div>
 
-            ) : <div>
+            ) : <div className="font-[Roboto]">
                 <NavLink to="/" style={{ marginRight: "20px" }}>
                     Home
                 </NavLink>
