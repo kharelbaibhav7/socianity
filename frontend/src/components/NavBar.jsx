@@ -11,15 +11,14 @@ const NavBar = () => {
 
 
     return (
-        <div className="container w-screen flex h-[5rem] items-center justify-between mt-4">
-            <div className="logoAndNameContainer flex items-center h-[5rem]">
+        <div className="container w-screen flex h-[5rem] items-center justify-between mt-4 p-2">
+            <div className="logoAndNameContainer flex items-center gap-3 h-[5rem]">
                 <div className="logoContainer h-full overflow-hidden">
-                    <img src="../../images/logo.jpeg" alt="" className="h-full w-auto"/>
+                    <img src="../../images/logo.jpeg" alt="" className="h-full w-auto rounded-[100%]"/>
                 </div>
                 <p className="name">Socianity</p>
             </div>
             {token ? (
-
                 <div className="navOptions">
                     <NavLink to="/" style={{ marginRight: "20px" }}>
                         Home
