@@ -18,11 +18,10 @@ function EventsPage() {
     };
 
     fetchEvents();
-<<<<<<< HEAD
-      }, []);
-=======
+
+
   }, []);
->>>>>>> c0b41a74ee86fcc6e629a46674c958c855be46fe
+
 
   const handleEventClick = (id) => {
     navigate(`/events/${id}`);
