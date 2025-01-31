@@ -5,7 +5,10 @@ import { useNavigate, useParams } from "react-router-dom";
 const SpecificForumPage = () => {
     let { id } = useParams()
     let [Forum, setForum] = useState({})
+    let [likes, setLikes] = useState(0)
     let navigate = useNavigate()
+
+
 
     const onLike = async () => {
         let result = await axios({
@@ -15,8 +18,8 @@ const SpecificForumPage = () => {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }
         })
-        console.log(result)
-
+        // console.log(result.data.result.likes.length)
+        setLikes(result.data.result.likes.length)
 
     }
 
@@ -25,7 +28,8 @@ const SpecificForumPage = () => {
             try {
                 let response = await axios.get(`http://localhost:8000/api/Forums/${id}`);
                 setForum(response.data);
-                console.log(response.data, "reponse.data")
+                // console.log(response.data.likes.length, "reponse.data")
+                setLikes(response.data.likes.length);
             } catch (err) {
                 console.log(err.message)
             }
@@ -40,7 +44,7 @@ const SpecificForumPage = () => {
             <p>{Forum.description}</p>
 
             <button onClick={onLike}>Like</button>
-            <p>Total Likes: {Forum.likes?.length || 0}</p>
+            <p>Total Likes: {likes || 0}</p>
 
         </div>
     )

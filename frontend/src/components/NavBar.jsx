@@ -2,17 +2,14 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { GlobalVariableContext } from "../App";
 // import "./NavBar.css"
-
 const NavBar = () => {
-
     let global = useContext(GlobalVariableContext)
     let token = global.token
-
     return (
-        <div className="container w-screen flex h-[4rem] items-center justify-between m-auto mt-4 p-0 bg-orange-300 rounded-4xl">
+        <div className="container w-screen flex h-[4rem] items-center justify-between m-auto mt-4 p-0 bg-orange-300 rounded-4xl sticky top-0 z-2">
             <div className="logoAndNameContainer flex items-center gap-3 h-[5rem]">
                 <div className="logoContainer h-full overflow-hidden">
-                    <img src="../../images/logo.png" alt="" className="h-full w-auto rounded-[100%]"/>
+                    <img src="../../images/logo.png" alt="" className="h-full w-auto rounded-[100%]" />
                 </div>
                 <p className="name font-[Akaya Kanadaka]">Socianity</p>
             </div>
@@ -55,5 +52,4 @@ const NavBar = () => {
         </div>
     );
 };
-
 export default NavBar;

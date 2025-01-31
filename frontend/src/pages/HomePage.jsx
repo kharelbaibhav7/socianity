@@ -16,7 +16,7 @@ const HomePage = () => {
 
             {/* Peoples */}
             <div className="poeplesContainer absolute right-0 top-[5vh]">
-                <img src="../../images/People.jpeg" alt="" className='max-h-[70vh] w-auto'/>
+                <img src="../../images/People.jpeg" alt="" className='max-h-[70vh] w-auto' />
             </div>
 
 
@@ -25,34 +25,34 @@ const HomePage = () => {
                 {/* Event box */}
                 <div className="individualBoxContainer h-full w-full flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1 bg-white shadow-lg rounded-xl duration-250 hover:scale-110 scale:drop-shadow-xl">
                     <div className="imageContainer overflow-hidden">
-                        <img src="../../images/EventsLogo.png" alt="" className="h-full w-auto grow"/>
+                        <img src="../../images/EventsLogo.png" alt="" className="h-full w-auto grow" />
                     </div>
                     <p className='title bold text-[1rem] text-center'>Events</p>
                     <p className="description text-[0.7rem] text-center">Join inspiring community events </p>
                 </div>
 
-               {/* Donations box  */}
-               <div className="individualBoxContainer h-full w-full flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1 bg-white shadow-lg  rounded-xl duration-250 hover:scale-110">
+                {/* Donations box  */}
+                <div className="individualBoxContainer h-full w-full flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1 bg-white shadow-lg  rounded-xl duration-250 hover:scale-110">
                     <div className="imageContainer overflow-hidden">
-                        <img src="../../images/DonationsLogo.png" alt="" className="h-full w-auto grow"/>
+                        <img src="../../images/DonationsLogo.png" alt="" className="h-full w-auto grow" />
                     </div>
                     <p className='title bold text-[1rem] text-center'>Donations</p>
                     <p className="description text-[0.7rem] text-center">Make a donation to create an impact.</p>
                 </div>
 
                 {/* Contributions box  */}
-               <div className="individualBoxContainer h-full w-full flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1 bg-white shadow-lg  rounded-xl duration-250 hover:scale-110">
+                <div className="individualBoxContainer h-full w-full flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1 bg-white shadow-lg  rounded-xl duration-250 hover:scale-110">
                     <div className="imageContainer overflow-hidden">
-                        <img src="../../images/ContributionsLogo.png" alt="" className="h-full w-auto grow"/>
+                        <img src="../../images/ContributionsLogo.png" alt="" className="h-full w-auto grow" />
                     </div>
                     <p className='title bold text-[1rem] sm:text-[0.8rem] text-center'>Contributions</p>
                     <p className="description text-[0.7rem] text-center">Read abbout the great social contributors.</p>
                 </div>
 
                 {/* Forum box  */}
-               <div className="individualBoxContainer h-full w-full flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1 bg-white shadow-lg  rounded-xl duration-250 hover:scale-110">
+                <div className="individualBoxContainer h-full w-full flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1 bg-white shadow-lg  rounded-xl duration-250 hover:scale-110">
                     <div className="imageContainer overflow-hidden">
-                        <img src="../../images/ForumLogo.png" alt="" className="h-full w-auto grow"/>
+                        <img src="../../images/ForumLogo.png" alt="" className="h-full w-auto grow" />
                     </div>
                     <p className='title bold text-[1rem] text-center'>Forum</p>
                     <p className="description text-[0.7rem] text-center">Share your ideas and views for a stronger community.</p>
@@ -71,7 +71,7 @@ const HomePage = () => {
 
 
             {/* <button className="main_button">Get Started</button> */}
-            
+
         </div>
     )
 }
