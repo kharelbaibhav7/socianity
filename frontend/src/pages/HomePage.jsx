@@ -16,7 +16,7 @@ const HomePage = () => {
 
             {/* Peoples */}
             <div className="poeplesContainer absolute right-0 top-[5vh]">
-                <img src="../../images/People.jpeg" alt="" className='max-h-[70vh] w-auto' />
+                <img src="../../images/HomePagePeople.png" alt="" className='max-h-[70vh] w-auto' />
             </div>
 
 
