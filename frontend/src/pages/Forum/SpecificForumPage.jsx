@@ -22,7 +22,7 @@ const SpecificForumPage = () => {
     return (
         <div>
             <h1>{Forum.title}</h1>
-            <h2>-By {Forum.postedBy.fullName}</h2>
+            <h2>-By {Forum.postedBy?.fullName || "Anonymous"}</h2>
             <p>{Forum.description}</p>
 
             <button onClick={() => { console.log("like") }}>Like</button> // remaining
