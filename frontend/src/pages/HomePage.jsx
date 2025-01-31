@@ -13,8 +13,12 @@ const HomePage = () => {
             </section>
 
             <div className="gridContainer">
-                <div className="individualBoxContainer">
-                    
+                <div className="individualBoxContainer h-[20vh] w-[25vw] flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1">
+                    <div className="imageContainer overflow-hidden">
+                        <img src="../../images/logo.jpeg" alt="" className="h-full w-auto rounded-[100%] grow"/>
+                    </div>
+                    <p className='title bold text-[1rem] text-center'>Events</p>
+                    <p className="description text-[0.7rem] text-center">Join inspiring events and connect with the community in meaningful ways.</p>
                 </div>
             </div>
 
