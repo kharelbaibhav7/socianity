@@ -14,6 +14,9 @@ import AddEventForm from "../pages/Event/AddEventForm";
 import ContributionPage from "../pages/Contribution/ContributionPage";
 import SpecificContributionPage from "../pages/Contribution/SpecificContributionPage";
 import AddFundraisingForm from "../pages/Fundraising/AddFundraisingForm";
+import ForumsPage from "../pages/Forum/ForumsPage";
+import AddForumForm from "../pages/Forum/AddForumForm";
+import SpecificForumPage from "../pages/Forum/SpecificForumPage";
 
 
 // import SpecificEventPage from "../pages/SpecificEventPage";
@@ -59,6 +62,18 @@ const MyRoutes = () => {
                             <Route
                                 path="contributions/:id"
                                 element={<SpecificContributionPage></SpecificContributionPage>}
+                            ></Route>
+                            <Route
+                                path="forum"
+                                element={<ForumsPage></ForumsPage>}
+                            ></Route>
+                            <Route
+                                path="forums/:id"
+                                element={<SpecificForumPage></SpecificForumPage>}
+                            ></Route>
+                            <Route
+                                path="forum/post"
+                                element={<AddForumForm></AddForumForm>}
                             ></Route>
                             <Route
                                 path="post"

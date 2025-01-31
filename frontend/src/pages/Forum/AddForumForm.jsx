@@ -1,20 +1,18 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { Navigate, useNavigate } from 'react-router-dom'
 
-const AddFundraisingForm = () => {
+const AddForumForm = () => {
 
     const [title, setTitle] = useState("")
-    const [target, setTarget] = useState("")
-    const [phoneNumber, setPhoneNumber] = useState("")
     const [description, setDescription] = useState("")
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
         let data = {
             title,
-            target,
-            phoneNumber,
             description
         }
         console.log(data)
@@ -23,7 +21,7 @@ const AddFundraisingForm = () => {
 
             let result = await axios({
                 method: 'post',
-                url: `http://localhost:8000/api/fundraising`,
+                url: `http://localhost:8000/api/forums`,
                 data: data,
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -31,12 +29,13 @@ const AddFundraisingForm = () => {
             })
             console.log(result)
             setTitle("")
-            setTarget("")
-            setPhoneNumber("")
             setDescription("")
         } catch (error) {
             console.log(error)
         }
+
+        navigate("/forum")
+
     }
 
 
@@ -46,14 +45,6 @@ const AddFundraisingForm = () => {
                 <div>
                     <label htmlFor="Title">Title: </label>
                     <input type="text" id='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
-
-
-                    <label htmlFor="Target">Target: </label>
-                    <input type="text" id='Target' value={target} onChange={(e) => setTarget(e.target.value)} />
-                    <br />
-
-                    <label htmlFor="PhoneNumber">PhoneNumber: </label>
-                    <input type='text' id='PhoneNumber' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
 
                     <label htmlFor="Description">Description: </label>
                     <textarea type='text' id='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
@@ -67,4 +58,4 @@ const AddFundraisingForm = () => {
     )
 }
 
-export default AddFundraisingForm
+export default AddForumForm
