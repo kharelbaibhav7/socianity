@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const AddEventForm = () => {
+const AddFundraisingForm = () => {
 
-    const [name, setName] = useState("")
-    const [date, setDate] = useState("")
-    const [time, setTime] = useState("")
+    const [title, setTitle] = useState("")
+    const [target, setTarget] = useState("")
+    const [phoneNumber, setPhoneNumber] = useState("")
     const [description, setDescription] = useState("")
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        console.log("a")
+
         let data = {
-            name,
-            date,
-            time,
+            title,
+            target,
+            phoneNumber,
             description
         }
         console.log(data)
@@ -23,16 +25,16 @@ const AddEventForm = () => {
 
             let result = await axios({
                 method: 'post',
-                url: `http://localhost:8000/api/events`,
+                url: `http://localhost:8000/api/fundraising`,
                 data: data,
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
             })
-            // console.log(result)
-            setName("")
-            setDate("")
-            setTime("")
+            console.log(result)
+            setTitle("")
+            setTarget("")
+            setPhoneNumber("")
             setDescription("")
         } catch (error) {
             console.log(error)
@@ -44,16 +46,16 @@ const AddEventForm = () => {
         <div>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="Name">Name: </label>
-                    <input type="text" id='Name' value={name} onChange={(e) => setName(e.target.value)} />
+                    <label htmlFor="Title">Title: </label>
+                    <input type="text" id='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
 
 
-                    <label htmlFor="Date">Date: </label>
-                    <input type="date" id='Date' value={date} onChange={(e) => setDate(e.target.value)} />
+                    <label htmlFor="Target">Target: </label>
+                    <input type="text" id='Target' value={target} onChange={(e) => setTarget(e.target.value)} />
                     <br />
 
-                    <label htmlFor="Time">Time: </label>
-                    <input type='text' id='Time' value={time} onChange={(e) => setTime(e.target.value)} />
+                    <label htmlFor="PhoneNumber">PhoneNumber: </label>
+                    <input type='text' id='PhoneNumber' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
 
                     <label htmlFor="Description">Description: </label>
                     <textarea type='text' id='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
@@ -67,4 +69,4 @@ const AddEventForm = () => {
     )
 }
 
-export default AddEventForm
+export default AddFundraisingForm

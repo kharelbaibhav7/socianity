@@ -13,6 +13,7 @@ import PostPage from "../pages/PostPage";
 import AddEventForm from "../pages/Event/AddEventForm";
 import ContributionPage from "../pages/Contribution/ContributionPage";
 import SpecificContributionPage from "../pages/Contribution/SpecificContributionPage";
+import AddFundraisingForm from "../pages/Fundraising/AddFundraisingForm";
 
 
 // import SpecificEventPage from "../pages/SpecificEventPage";
@@ -71,7 +72,7 @@ const MyRoutes = () => {
                             <Route path="post/event" element={<AddEventForm></AddEventForm>}>
                             </Route>
 
-                            <Route path="post/fundraisings" element={<AddEventForm></AddEventForm>}>
+                            <Route path="post/fundraising" element={<AddFundraisingForm></AddFundraisingForm>}>
                             </Route>
 
 
