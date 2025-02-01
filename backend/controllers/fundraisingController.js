@@ -65,7 +65,7 @@ const donateToFundraising = asyncHandler(async (req, res) => {
   const fundraising = await Fundraising.findById(req.params.id);
 
   if (fundraising) {
-    fundraising.currentAmount += amount;
+    fundraising.currentAmount += Number(amount);
     await fundraising.save();
     res.json({
       message: "Donation successful",
