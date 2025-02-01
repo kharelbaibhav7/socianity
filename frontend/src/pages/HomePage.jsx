@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from "framer-motion";
 
 const HomePage = () => {
     return (
@@ -17,7 +18,13 @@ const HomePage = () => {
 
             {/* Peoples */}
             <div className="poeplesContainer absolute right-7 top-[-15vh]">
-                <img src="../../images/HomePagePeople.png" alt="" className='max-h-[70vh] w-auto' />
+                <motion.img
+                    src="../../images/logo.png"
+                    alt=""
+                    className="rounded-sm scale-105"
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
+                />
             </div>
 
 
@@ -68,14 +75,21 @@ const HomePage = () => {
             </div>
 
             <div className="secondPageMainBox w-full h-[45vh] flex gap-[2rem] mt-[3rem] bg-white rounded-3xl justify-around align-center py-[1rem] px-[2rem]">
-                
-                    <div className="text_container flex flex-col justify-center items-left gap-[1rem]">
-                        <p className='font-bold text-blue-400 text-[1.5rem]'>ABOUT US</p>
-                        <p className='mainHeading text-[2.5rem] font-bold'>About socianity</p>
-                        <p className='font-normal'>Socianity Is a community-driven platform that unites individuals and organizations to create positive change. Through collaboration, contribution and meaningful connections, we empower people to strengthen society and build a better future together</p>
-                    </div>
-               
-                <img src="../../images/People.jpeg" alt="" className='rounded-sm scale-103'/>
+
+                <div className="text_container flex flex-col justify-center items-left gap-[1rem]">
+                    <p className='font-bold text-blue-400 text-[1.5rem]'>ABOUT US</p>
+                    <p className='mainHeading text-[2.5rem] font-bold'>About socianity</p>
+                    <p className='font-normal'>Socianity Is a community-driven platform that unites individuals and organizations to create positive change. Through collaboration, contribution and meaningful connections, we empower people to strengthen society and build a better future together</p>
+                </div>
+
+                <img src="../../images/HomePagePeople.png" alt="" className='rounded-sm scale-108' />
+                {/* <motion.img
+                    src="../../images/logo.png"
+                    alt=""
+                    className="rounded-sm scale-105"
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
+                /> */}
             </div>
 
             <div className="BottomBigTextContainer p-2 mt-10 mx-auto flex flex-col gap-[0.85rem] justify-center items-center">
@@ -92,21 +106,21 @@ const HomePage = () => {
 
                 <div className="iconsContainer flex gap-4.5">
                     <Link to="https://www.instagram.com/" className='h-[content-fit]'>
-                        <img src="../../images/instaLogo.png" alt="" className='h-8 w-auto'/>
+                        <img src="../../images/instaLogo.png" alt="" className='h-8 w-auto' />
                     </Link>
                     <Link to="https://www.youtube.com/" className='h-[content-fit]'>
-                        <img src="../../images/youtubeLogo.png" alt="" className='h-8 w-auto '/>
+                        <img src="../../images/youtubeLogo.png" alt="" className='h-8 w-auto ' />
                     </Link>
                     <Link to="https://www.linkedin.com/" className='h-[content-fit]'>
-                        <img src="../../images/linkedinLogo.png" alt="" className='h-8 w-auto'/>
+                        <img src="../../images/linkedinLogo.png" alt="" className='h-8 w-auto' />
                     </Link>
                 </div>
             </div>
 
             <footer className='flex min-w-[40vh] mx-auto justify-center items-center gap-5 mt-1.55 p-3'>
                 <p>Copyright &copy; All Rights Reserved.</p>
-                <Link to="#">Privacy policy.</Link>  
-                <Link to="#">Terms of Services.</Link> 
+                <Link to="#">Privacy policy.</Link>
+                <Link to="#">Terms of Services.</Link>
             </footer>
 
         </div>
