@@ -5,7 +5,7 @@ const HomePage = () => {
         <div className='pl-[2rem] min-h-screen relative'>
 
             {/* Socianity Big font text part */}
-            <section className="middlePage">
+            <section className="middlePage mt-35">
                 <div className="textContainer">
                     <h1 className="main_title font-bold text-[3rem]">Socianity</h1>
                     <h2 className="main_slogan text-[1.5rem]">Strengthening society, Uniting for Change</h2>
@@ -15,7 +15,7 @@ const HomePage = () => {
             </section>
 
             {/* Peoples */}
-            <div className="poeplesContainer absolute right-7 top-[5vh]">
+            <div className="poeplesContainer absolute right-7 top-[-15vh]">
                 <img src="../../images/HomePagePeople.png" alt="" className='max-h-[70vh] w-auto' />
             </div>
 
@@ -59,7 +59,7 @@ const HomePage = () => {
                 </div>
             </div>
 
-            <div className="lowerRightBigText_And_ButtonContainer absolute top-[75vh] right-0 w-[35vw] flex flex-col items-center justify-between">
+            <div className="lowerRightBigText_And_ButtonContainer absolute top-[65vh] right-0 w-[35vw] flex flex-col items-center justify-between">
                 <p className="lowerRightBigText font-semibold text-[1.5rem]">
                     Earn rewards while making a dierence-Join us today!
                 </p>
