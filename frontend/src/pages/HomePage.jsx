@@ -74,7 +74,7 @@ const HomePage = () => {
             </div>
 
             {/* Footer */}
-            <div className="bg-gray-800 text-white py-6 mt-12">
+            <div className="bg-white-800 border-radius-3xl text-white py-6 mt-12">
                 <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto px-8">
                     <div className="flex items-center gap-3">
                         <img src="../../images/logo.png" alt="Logo" className="w-12 h-12 rounded-full" />
