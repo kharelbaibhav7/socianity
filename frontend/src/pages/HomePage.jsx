@@ -7,10 +7,10 @@ const HomePage = () => {
         <div className="px-8 min-h-screen relative bg-[#c7cce5] text-gray-800">
             {/* Hero Section */}
             <section className="flex flex-col items-center justify-center text-center py-16">
-                <h1 className="text-6xl font-extrabold text-purple-600 drop-shadow-lg">Socianity</h1>
+                <h1 className="text-6xl font-extrabold text-blue-600 drop-shadow-lg">Socianity</h1>
                 <h2 className="text-2xl mt-3 text-gray-700">Strengthening society, Uniting for Change</h2>
                 <div className="h-1 w-20 bg-emerald-400 mt-3"></div>
-                <motion.button whileHover={{ scale: 1.1 }} className="mt-6 px-6 py-3 bg-purple-500 text-white rounded-xl shadow-lg hover:bg-purple-600">
+                <motion.button whileHover={{ scale: 1.1 }} className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-xl shadow-lg hover:bg-purple-600">
                     Register Now
                 </motion.button>
             </section>
@@ -45,7 +45,7 @@ const HomePage = () => {
             {/* CTA Section */}
             <div className="flex flex-col items-center text-center mt-12">
                 <p className="text-2xl font-semibold">Earn rewards while making a difference - Join us today!</p>
-                <motion.button whileHover={{ scale: 1.1 }} className="mt-4 px-6 py-3 bg-purple-500 text-white rounded-xl shadow-lg hover:bg-purple-600">
+                <motion.button whileHover={{ scale: 1.1 }} className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-xl shadow-lg hover:bg-purple-600">
                     Let's Get Started
                 </motion.button>
             </div>
@@ -68,7 +68,7 @@ const HomePage = () => {
                 <p className="text-gray-700 mt-4 max-w-xl mx-auto">
                     Join Socianity and become part of a thriving community dedicated to positive change. Whether you want to participate in meaningful events, contribute to impactful projects, donate to support causes, or engage in discussions, there's a place for you here.
                 </p>
-                <motion.button whileHover={{ scale: 1.1 }} className="mt-6 px-8 py-3 bg-purple-500 text-white rounded-2xl shadow-lg hover:bg-purple-600">
+                <motion.button whileHover={{ scale: 1.1 }} className="mt-6 px-8 py-3 bg-blue-500 text-white rounded-2xl shadow-lg hover:bg-purple-600">
                     Join Now
                 </motion.button>
             </div>
