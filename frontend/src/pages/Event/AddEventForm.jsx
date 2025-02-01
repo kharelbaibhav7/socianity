@@ -3,6 +3,7 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, FileText, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const AddEventForm = () => {
     const [name, setName] = useState("");
@@ -25,7 +26,7 @@ const AddEventForm = () => {
             setDate("");
             setTime("");
             setDescription("");
-
+            toast.success("Event added successfully !!! 😊")
             navigate("/events")
         } catch (error) {
             console.log(error);

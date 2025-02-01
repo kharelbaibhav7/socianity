@@ -32,7 +32,7 @@ const SpecificFundraisings = () => {
     const handleDonate = async () => {
         try {
             let result = await axios.post(`http://localhost:8000/api/fundraising/${id}/donate`, { amount });
-            toast.success('Donation successful!');
+            toast.success('Donation successful! 🙏');
             setCurrentAmount(result.data.currentAmount)
             console.log(result)
             setAmount("");

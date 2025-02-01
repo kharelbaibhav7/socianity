@@ -53,10 +53,10 @@ const SpecificContributionPage = () => {
 
 
 
-                <motion.div className="flex items-center space-x-3">
+                {/* <motion.div className="flex items-center space-x-3">
                     <Calendar className="size-5 text-primary" />
                     <span>{new Date(contribution.date).toLocaleDateString()}</span>
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div className="p-4 bg-gray-100 rounded-lg shadow-sm">
                     <FileText className="size-6 text-primary mb-2" />
