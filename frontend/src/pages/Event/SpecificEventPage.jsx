@@ -25,6 +25,23 @@ const SpecificEventPage = () => {
         ticketPrice: 0
     });
 
+    const applyToEvent = async () => {
+        try {
+
+            let response = await axios({
+                method: 'post',
+                url: `http://localhost:8000/api/events/${id}/apply`,
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
+            });
+            toast.success("Applied successfully");
+            console.log(response.data);
+        } catch (err) {
+            console.error("Error applying to event:", err.message);
+        }
+
+    };
     useEffect(() => {
         const fetchEvent = async () => {
             try {
@@ -124,9 +141,7 @@ const SpecificEventPage = () => {
                 className="w-full mt-4 bg-blue-600 text-white p-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                    toast.success("Applied succesfully")
-                }}
+                onClick={applyToEvent}
             >
                 Apply
             </motion.button>

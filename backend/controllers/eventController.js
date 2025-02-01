@@ -78,6 +78,8 @@ const applyEventController = asyncHandler(async (req, res) => {
     click here To view details</a>
     `,
   });
+
+  res.json({ message: "Applied successfully" });
 });
 
 export {
