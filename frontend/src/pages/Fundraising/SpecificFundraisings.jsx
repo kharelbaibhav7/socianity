@@ -48,13 +48,11 @@ const SpecificFundraisings = () => {
     return (
         <div className="container mx-auto p-6 max-w-4xl bg-white rounded-xl shadow-lg overflow-hidden">
             <motion.img
-                src={fundraising.image}
+                src={`http://localhost:8000${fundraising.image}`}
                 alt={fundraising.title}
                 className="w-full h-64 object-cover rounded-t-xl"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
             />
+
             <div className="p-6">
                 <h1 className="text-4xl font-extrabold text-gray-900 mb-4">{fundraising.title}</h1>
                 <p className="text-lg text-gray-700 mb-2">Organizer: <span className="font-semibold">{fundraising.organizer ? fundraising.organizer.fullName : 'Unknown Organizer'}</span></p>

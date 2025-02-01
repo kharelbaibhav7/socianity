@@ -43,7 +43,9 @@ const Fundraisings = () => {
             className="bg-white p-6 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl border border-gray-200"
           >
             <Link to={`/fundraisings/${fundraising._id}`} className="block">
-              <img src={fundraising.image} alt={fundraising.title} className="w-full h-48 object-cover rounded-lg mb-4" />
+              {/* <img src={fundraising.image} alt={fundraising.title} className="w-full h-48 object-cover rounded-lg mb-4" /> */}
+              <img src={`http://localhost:8000${fundraising.image}`} alt={fundraising.title} className="w-full h-48 object-cover rounded-lg mb-4" />
+
               <h2 className="text-2xl font-bold text-gray-900 mb-2">{fundraising.title}</h2>
               <p className="text-gray-600">Organizer: {fundraising.organizer ? fundraising.organizer.fullName : 'Unknown Organizer'}</p>
               <div className="mt-4 flex items-center gap-2">

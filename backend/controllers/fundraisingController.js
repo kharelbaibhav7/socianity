@@ -4,8 +4,17 @@ import Fundraising from "../models/fundraisingModel.js";
 // @desc    Create a new fundraising
 // @route   POST /api/fundraising
 // @access  Private
+// @desc    Create a new fundraising
+// @route   POST /api/fundraising
+// @access  Private
 const createFundraising = asyncHandler(async (req, res) => {
   const { title, target, phoneNumber, description } = req.body;
+  const image = req.file ? `/uploads/${req.file.filename}` : null;
+
+  if (!image) {
+    res.status(400);
+    throw new Error("Image upload is required");
+  }
 
   const fundraising = new Fundraising({
     organizer: req.user._id,
@@ -13,6 +22,7 @@ const createFundraising = asyncHandler(async (req, res) => {
     target,
     phoneNumber,
     description,
+    image,
   });
 
   const createdFundraising = await fundraising.save();
