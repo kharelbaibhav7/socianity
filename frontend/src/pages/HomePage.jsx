@@ -1,130 +1,101 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const HomePage = () => {
     return (
-        <div className='pl-[2rem] min-h-screen relative'>
-
-            {/* Socianity Big font text part */}
-            <section className="middlePage mt-35">
-                <div className="textContainer">
-                    <h1 className="main_title font-bold text-[3rem]">Socianity</h1>
-                    <h2 className="main_slogan text-[1.5rem]">Strengthening society, Uniting for Change</h2>
-                    <div className="line h-[2px] w-[10vw] bg-emerald-400 mt-1"></div >
-                </div>
-                <button className='mt-[3rem] bg-purple-400 rounded-2xl p-2 text-2xl duration-250 hover:scale-110'>Register Now</button>
+        <div className="px-8 min-h-screen relative bg-[#c7cce5] text-gray-800">
+            {/* Hero Section */}
+            <section className="flex flex-col items-center justify-center text-center py-16">
+                <h1 className="text-6xl font-extrabold text-purple-600 drop-shadow-lg">Socianity</h1>
+                <h2 className="text-2xl mt-3 text-gray-700">Strengthening society, Uniting for Change</h2>
+                <div className="h-1 w-20 bg-emerald-400 mt-3"></div>
+                <motion.button whileHover={{ scale: 1.1 }} className="mt-6 px-6 py-3 bg-purple-500 text-white rounded-xl shadow-lg hover:bg-purple-600">
+                    Register Now
+                </motion.button>
             </section>
 
-            {/* Peoples */}
-            <div className="poeplesContainer absolute right-7 top-[-15vh]">
+            {/* Spinning Logo */}
+            <div className="absolute top-[-5vh] right-10">
                 <motion.img
                     src="../../images/logo.png"
-                    alt=""
-                    className="rounded-sm scale-105"
+                    alt="Logo"
+                    className="w-32 h-32"
                     animate={{ rotate: 360 }}
-                    transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
+                    transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
                 />
             </div>
 
-
-            {/* cards part */}
-            <div className="gridContainer grid grid-cols-2 grid-rows-2 gap-7 columns-3xl w-[50vw] h-[45vh] mt-[6rem]">
-                {/* Event box */}
-                <div className="individualBoxContainer h-full w-full flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1 bg-white shadow-lg rounded-xl duration-250 hover:scale-110 scale:drop-shadow-xl">
-                    <div className="imageContainer overflow-hidden">
-                        <img src="../../images/EventsLogo.png" alt="" className="h-full w-auto grow" />
-                    </div>
-                    <p className='title font-semibold text-[1rem] text-center'>Events</p>
-                    <p className="description text-[0.7rem] text-center">Join inspiring community events </p>
-                </div>
-
-                {/* Donations box  */}
-                <div className="individualBoxContainer h-full w-full flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1 bg-white shadow-lg  rounded-xl duration-250 hover:scale-110">
-                    <div className="imageContainer overflow-hidden">
-                        <img src="../../images/DonationsLogo.png" alt="" className="h-full w-auto grow" />
-                    </div>
-                    <p className='title font-semibold text-[1rem] text-center'>Donations</p>
-                    <p className="description text-[0.7rem] text-center">Make a donation to create an impact.</p>
-                </div>
-
-                {/* Contributions box  */}
-                <div className="individualBoxContainer h-full w-full flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1 bg-white shadow-lg  rounded-xl duration-250 hover:scale-110">
-                    <div className="imageContainer overflow-hidden">
-                        <img src="../../images/ContributionsLogo.png" alt="" className="h-full w-auto grow" />
-                    </div>
-                    <p className='title font-semibold text-[1rem] sm:text-[0.8rem] text-center'>Contributions</p>
-                    <p className="description text-[0.7rem] text-center">Read abbout the great social contributors.</p>
-                </div>
-
-                {/* Forum box  */}
-                <div className="individualBoxContainer h-full w-full flex flex-col justify-center items-center border-2 border-white gap-[0.2rem] p-1 m-1 bg-white shadow-lg  rounded-xl duration-250 hover:scale-110">
-                    <div className="imageContainer overflow-hidden">
-                        <img src="../../images/ForumLogo.png" alt="" className="h-full w-auto grow" />
-                    </div>
-                    <p className='title font-semibold text-[1rem] text-center'>Forum</p>
-                    <p className="description text-[0.7rem] text-center">Share your ideas and views for a stronger community.</p>
-                </div>
+            {/* Feature Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 mx-auto w-full max-w-5xl">
+                {[
+                    { title: "Events", desc: "Join inspiring community events", img: "../../images/EventsLogo.png" },
+                    { title: "Donations", desc: "Make a donation to create an impact.", img: "../../images/DonationsLogo.png" },
+                    { title: "Contributions", desc: "Read about great social contributors.", img: "../../images/ContributionsLogo.png" },
+                    { title: "Forum", desc: "Share your ideas for a stronger community.", img: "../../images/ForumLogo.png" },
+                ].map((item, index) => (
+                    <motion.div key={index} whileHover={{ scale: 1.05 }} className="bg-white p-4 rounded-xl shadow-xl flex flex-col items-center text-center">
+                        <img src={item.img} alt={item.title} className="w-20 h-20" />
+                        <h3 className="text-xl font-semibold mt-2">{item.title}</h3>
+                        <p className="text-gray-600 text-sm">{item.desc}</p>
+                    </motion.div>
+                ))}
             </div>
 
-            <div className="lowerRightBigText_And_ButtonContainer absolute top-[65vh] right-0 w-[35vw] flex flex-col items-center justify-between">
-                <p className="lowerRightBigText font-semibold text-[1.5rem]">
-                    Earn rewards while making a dierence-Join us today!
+            {/* CTA Section */}
+            <div className="flex flex-col items-center text-center mt-12">
+                <p className="text-2xl font-semibold">Earn rewards while making a difference - Join us today!</p>
+                <motion.button whileHover={{ scale: 1.1 }} className="mt-4 px-6 py-3 bg-purple-500 text-white rounded-xl shadow-lg hover:bg-purple-600">
+                    Let's Get Started
+                </motion.button>
+            </div>
+
+            {/* About Section */}
+            <div className="flex flex-col md:flex-row items-center bg-white p-8 rounded-3xl shadow-xl mt-12 max-w-6xl mx-auto">
+                <div className="md:w-1/2">
+                    <h2 className="text-3xl font-bold text-blue-500">ABOUT US</h2>
+                    <h3 className="text-4xl font-bold mt-2">About Socianity</h3>
+                    <p className="text-gray-700 mt-4">
+                        Socianity is a community-driven platform that unites individuals and organizations to create positive change. Through collaboration, contribution, and meaningful connections, we empower people to strengthen society and build a better future together.
+                    </p>
+                </div>
+                <img src="../../images/HomePagePeople.png" alt="Community" className="w-64 md:w-80 rounded-xl shadow-lg" />
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center mt-12 px-8">
+                <p className="text-3xl font-bold">Ready to make a difference?</p>
+                <p className="text-gray-700 mt-4 max-w-xl mx-auto">
+                    Join Socianity and become part of a thriving community dedicated to positive change. Whether you want to participate in meaningful events, contribute to impactful projects, donate to support causes, or engage in discussions, there's a place for you here.
                 </p>
-                <button className='mt-[1rem] bg-purple-400 rounded-2xl p-2 text-2xl duration-250 hover:scale-110'>Let's Get Started</button>
+                <motion.button whileHover={{ scale: 1.1 }} className="mt-6 px-8 py-3 bg-purple-500 text-white rounded-2xl shadow-lg hover:bg-purple-600">
+                    Join Now
+                </motion.button>
             </div>
 
-            <div className="secondPageMainBox w-full h-[45vh] flex gap-[2rem] mt-[3rem] bg-white rounded-3xl justify-around align-center py-[1rem] px-[2rem]">
-
-                <div className="text_container flex flex-col justify-center items-left gap-[1rem]">
-                    <p className='font-bold text-blue-400 text-[1.5rem]'>ABOUT US</p>
-                    <p className='mainHeading text-[2.5rem] font-bold'>About socianity</p>
-                    <p className='font-normal'>Socianity Is a community-driven platform that unites individuals and organizations to create positive change. Through collaboration, contribution and meaningful connections, we empower people to strengthen society and build a better future together</p>
+            {/* Footer */}
+            <div className="bg-gray-800 text-white py-6 mt-12">
+                <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto px-8">
+                    <div className="flex items-center gap-3">
+                        <img src="../../images/logo.png" alt="Logo" className="w-12 h-12 rounded-full" />
+                        <p className="text-lg font-semibold">Socianity</p>
+                    </div>
+                    <div className="flex gap-4 mt-4 md:mt-0">
+                        {[
+                            { link: "https://www.instagram.com/", img: "../../images/instaLogo.png" },
+                            { link: "https://www.youtube.com/", img: "../../images/youtubeLogo.png" },
+                            { link: "https://www.linkedin.com/", img: "../../images/linkedinLogo.png" },
+                        ].map((social, index) => (
+                            <Link key={index} to={social.link} target="_blank">
+                                <img src={social.img} alt="Social" className="w-8 h-8" />
+                            </Link>
+                        ))}
+                    </div>
                 </div>
-
-                <img src="../../images/HomePagePeople.png" alt="" className='rounded-sm scale-108' />
-                {/* <motion.img
-                    src="../../images/logo.png"
-                    alt=""
-                    className="rounded-sm scale-105"
-                    animate={{ rotate: 360 }}
-                    transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
-                /> */}
+                <p className="text-center text-sm mt-4">Copyright &copy; 2025 Socianity. All Rights Reserved.</p>
             </div>
-
-            <div className="BottomBigTextContainer p-2 mt-10 mx-auto flex flex-col gap-[0.85rem] justify-center items-center">
-                <p className='text-[2rem] font-font-font-bold'>Ready to make a difference?</p>
-                <p className='font-normal text-center w-[50%]'>Join socianity and become part of a thriving community dedicated to positive change. Whether you want to participate in meaningful events, contribute to impactful projects, donate to support causes, or engage in decisions discussions, there's a place for you here.</p>
-                <button className='bg-purple-400 rounded-3xl py-3 px-9 border-none duration-250 hover:scale-110'>Join Now</button>
-            </div>
-
-            <div className="bottomTrayContainer flex justify-between items-center px-7 border-b-4 border-blue-500">
-                <div className="logoAndNameContainer flex items-center gap-3">
-                    <img src="../../images/logo.png" alt="" className="h-14 w-auto rounded-[100%]" />
-                    <p className="name font-semibold">Socianity</p>
-                </div>
-
-                <div className="iconsContainer flex gap-4.5">
-                    <Link to="https://www.instagram.com/" className='h-[content-fit]'>
-                        <img src="../../images/instaLogo.png" alt="" className='h-8 w-auto' />
-                    </Link>
-                    <Link to="https://www.youtube.com/" className='h-[content-fit]'>
-                        <img src="../../images/youtubeLogo.png" alt="" className='h-8 w-auto ' />
-                    </Link>
-                    <Link to="https://www.linkedin.com/" className='h-[content-fit]'>
-                        <img src="../../images/linkedinLogo.png" alt="" className='h-8 w-auto' />
-                    </Link>
-                </div>
-            </div>
-
-            <footer className='flex min-w-[40vh] mx-auto justify-center items-center gap-5 mt-1.55 p-3'>
-                <p>Copyright &copy; All Rights Reserved.</p>
-                <Link to="#">Privacy policy.</Link>
-                <Link to="#">Terms of Services.</Link>
-            </footer>
-
         </div>
-    )
-}
+    );
+};
 
-export default HomePage
+export default HomePage;
