@@ -7,8 +7,12 @@ import Contribution from "../models/contributionModel.js";
 const createContribution = asyncHandler(async (req, res) => {
   const { title, description } = req.body;
 
+  let userFullName = req.user.fullName;
+
+  console.log(userFullName);
   const contribution = new Contribution({
     title,
+    author: userFullName,
     postedBy: req.user._id,
     description,
   });
@@ -25,6 +29,7 @@ const getAllContributions = asyncHandler(async (req, res) => {
     "postedBy",
     "fullName"
   );
+
   res.json(contributions);
 });
 

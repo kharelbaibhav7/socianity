@@ -15,6 +15,9 @@ const contributionSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    author: {
+      type: String,
+    },
     likes: [
       {
         type: mongoose.Schema.Types.ObjectId,

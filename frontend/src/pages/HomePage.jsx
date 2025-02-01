@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
     return (
@@ -11,7 +12,7 @@ const HomePage = () => {
                     <h2 className="main_slogan text-[1.5rem]">Strengthening society, Uniting for Change</h2>
                     <div className="line h-[2px] w-[10vw] bg-emerald-400 mt-1"></div >
                 </div>
-                <button className='mt-[3rem] bg-amber-500 rounded-2xl p-2 text-2xl duration-250 hover:scale-110'>Register Now</button>
+                <button className='mt-[3rem] bg-purple-400 rounded-2xl p-2 text-2xl duration-250 hover:scale-110'>Register Now</button>
             </section>
 
             {/* Peoples */}
@@ -63,7 +64,7 @@ const HomePage = () => {
                 <p className="lowerRightBigText font-semibold text-[1.5rem]">
                     Earn rewards while making a dierence-Join us today!
                 </p>
-                <button className='mt-[1rem] bg-amber-500 rounded-2xl p-2 text-2xl duration-250 hover:scale-110'>Let's Get Started</button>
+                <button className='mt-[1rem] bg-purple-400 rounded-2xl p-2 text-2xl duration-250 hover:scale-110'>Let's Get Started</button>
             </div>
 
             <div className="secondPageMainBox w-full h-[45vh] flex gap-[2rem] mt-[3rem] bg-white rounded-3xl justify-around align-center py-[1rem] px-[2rem]">
@@ -77,11 +78,36 @@ const HomePage = () => {
                 <img src="../../images/People.jpeg" alt="" className='rounded-sm scale-103'/>
             </div>
 
-            <div className="BottomBigTextContainer border border-white p-2 mt-10 mx-auto flex flex-col gap-[0.85rem] justify-center items-center">
+            <div className="BottomBigTextContainer p-2 mt-10 mx-auto flex flex-col gap-[0.85rem] justify-center items-center">
                 <p className='text-[2rem] font-font-font-bold'>Ready to make a difference?</p>
                 <p className='font-normal text-center w-[50%]'>Join socianity and become part of a thriving community dedicated to positive change. Whether you want to participate in meaningful events, contribute to impactful projects, donate to support causes, or engage in decisions discussions, there's a place for you here.</p>
-                <button className='bg-blue-400 rounded-3xl py-3 px-9 border-none '>Join Now</button>
+                <button className='bg-purple-400 rounded-3xl py-3 px-9 border-none duration-250 hover:scale-110'>Join Now</button>
             </div>
+
+            <div className="bottomTrayContainer flex justify-between items-center px-7 border-b-4 border-blue-500">
+                <div className="logoAndNameContainer flex items-center gap-3">
+                    <img src="../../images/logo.png" alt="" className="h-14 w-auto rounded-[100%]" />
+                    <p className="name font-semibold">Socianity</p>
+                </div>
+
+                <div className="iconsContainer flex gap-4.5">
+                    <Link to="https://www.instagram.com/" className='h-[content-fit]'>
+                        <img src="../../images/instaLogo.png" alt="" className='h-8 w-auto'/>
+                    </Link>
+                    <Link to="https://www.youtube.com/" className='h-[content-fit]'>
+                        <img src="../../images/youtubeLogo.png" alt="" className='h-8 w-auto '/>
+                    </Link>
+                    <Link to="https://www.linkedin.com/" className='h-[content-fit]'>
+                        <img src="../../images/linkedinLogo.png" alt="" className='h-8 w-auto'/>
+                    </Link>
+                </div>
+            </div>
+
+            <footer className='flex min-w-[40vh] mx-auto justify-center items-center gap-5 mt-1.55 p-3'>
+                <p>Copyright &copy; All Rights Reserved.</p>
+                <Link to="#">Privacy policy.</Link>  
+                <Link to="#">Terms of Services.</Link> 
+            </footer>
 
         </div>
     )
