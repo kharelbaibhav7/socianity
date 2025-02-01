@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { MessageCircle, ThumbsUp } from "lucide-react";
+import { MessageCircle, ThumbsUp, ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 import Button from "../../components/ui/button";
 import Input from "../../components/ui/input";
@@ -67,7 +67,13 @@ const SpecificForumPage = () => {
             transition={{ duration: 0.5 }}
             className="p-6 max-w-2xl mx-auto"
         >
-            <Button variant="outline" onClick={() => navigate(-1)}>Back</Button>
+            <Button
+                variant="outline"
+                onClick={() => navigate(-1)}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-100 transition-all"
+            >
+                <ArrowLeft size={18} /> Back
+            </Button>
 
             {loading ? (
                 <motion.div
@@ -152,7 +158,6 @@ const SpecificForumPage = () => {
 };
 
 export default SpecificForumPage;
-
 
 
 
