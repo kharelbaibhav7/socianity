@@ -16,7 +16,7 @@ const HomePage = () => {
             </section>
 
             {/* Spinning Logo */}
-            <div className="absolute top-[-5vh] right-10">
+            <div className="absolute top-[-1vh] right-10">
                 <motion.img
                     src="../../images/logo.png"
                     alt="Logo"
