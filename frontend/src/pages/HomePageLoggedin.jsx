@@ -2,10 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const HomePage = () => {
+const HomePageLoggedin = () => {
     let navigate = useNavigate();
-    const redirectHome = () => {
-        navigate("/register")
+    const redirectForum = () => {
+        navigate("/forum")
     }
     return (
         <div className="px-8 min-h-screen relative bg-[#c7cce5] text-gray-800">
@@ -14,8 +14,8 @@ const HomePage = () => {
                 <h1 className="text-6xl font-extrabold text-blue-600 drop-shadow-lg">Socianity</h1>
                 <h2 className="text-2xl mt-3 text-gray-700 ">Strengthening society, Uniting for Change</h2>
                 <div className="h-1 w-20 bg-emerald-400 mt-3"></div>
-                <motion.button whileHover={{ scale: 1.1 }} className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-xl shadow-lg hover:bg-purple-600" onClick={redirectHome}>
-                    Register Now
+                <motion.button whileHover={{ scale: 1.1 }} className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-xl shadow-lg hover:bg-purple-600" onClick={redirectForum}>
+                    Connect
                 </motion.button>
             </section>
 
@@ -49,8 +49,8 @@ const HomePage = () => {
             {/* CTA Section */}
             <div className="flex flex-col items-center text-center mt-12">
                 <p className="text-2xl font-semibold hover:text-blue-500">Earn rewards while making a difference - Join us today!</p>
-                <motion.button whileHover={{ scale: 1.1 }} className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-xl shadow-lg hover:bg-purple-600" onClick={redirectHome}>
-                    Let's Get Started
+                <motion.button whileHover={{ scale: 1.1 }} className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-xl shadow-lg hover:bg-purple-600" onClick={() => navigate("/fundraisings")}>
+                    Donate
                 </motion.button>
             </div>
 
@@ -69,10 +69,10 @@ const HomePage = () => {
             <div className="text-center mt-12 px-8">
                 <p className="text-3xl font-bold hover:text-blue-500">Ready to make a difference?</p>
                 <p className="text-gray-700 mt-4 max-w-xl mx-auto">
-                    Join Socianity and become part of a thriving community dedicated to positive change. Whether you want to participate in meaningful events, contribute to impactful projects, donate to support causes, or engage in discussions, there's a place for you here.
+                    Join multiple impactful events and become part of a thriving community dedicated to positive change. Whether you want to contribute to impactful projects, donate to support causes, or engage in discussions, there's a place for you here.
                 </p>
-                <motion.button whileHover={{ scale: 1.1 }} className="mt-6 px-8 py-3 bg-blue-500 text-white rounded-2xl shadow-lg hover:bg-purple-600" onClick={redirectHome}>
-                    Join Now
+                <motion.button whileHover={{ scale: 1.1 }} className="mt-6 px-8 py-3 bg-blue-500 text-white rounded-2xl shadow-lg hover:bg-purple-600" onClick={() => navigate("/events")}>
+                    Join Events
                 </motion.button>
             </div>
 
@@ -101,4 +101,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default HomePageLoggedin;

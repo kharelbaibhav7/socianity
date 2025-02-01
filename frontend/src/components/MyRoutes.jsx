@@ -18,6 +18,7 @@ import ForumsPage from "../pages/Forum/ForumsPage";
 import AddForumForm from "../pages/Forum/AddForumForm";
 import SpecificForumPage from "../pages/Forum/SpecificForumPage";
 import AddContributionPage from "../pages/Contribution/AddContributionPage";
+import HomePageLoggedin from "../pages/HomePageLoggedin";
 
 
 // import SpecificEventPage from "../pages/SpecificEventPage";
@@ -39,7 +40,7 @@ const MyRoutes = () => {
                 {
                     token ?
                         <>
-                            <Route index element={<HomePage></HomePage>}></Route>
+                            <Route index element={<HomePageLoggedin></HomePageLoggedin>}></Route>
                             <Route
                                 path="events"
                                 element={<EventsPage></EventsPage>}

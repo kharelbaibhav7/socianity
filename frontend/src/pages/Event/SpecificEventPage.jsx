@@ -10,6 +10,8 @@ import {
     DollarSign,
     BookOpen
 } from 'lucide-react';
+import { motion } from 'framer-motion'
+import toast from 'react-hot-toast';
 
 const SpecificEventPage = () => {
     let { id } = useParams();
@@ -117,6 +119,17 @@ const SpecificEventPage = () => {
                     </div>
                 </div>
             </div>
+            <motion.button
+                type="submit"
+                className="w-full mt-4 bg-blue-600 text-white p-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                    toast.success("Applied succesfully")
+                }}
+            >
+                Apply
+            </motion.button>
         </div>
     );
 };
