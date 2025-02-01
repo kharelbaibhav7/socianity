@@ -39,12 +39,14 @@ const SpecificForumPage = () => {
 
     return (
         <div>
+            <button onClick={() => navigate(-1)}>Back</button>
             <h1>{Forum.title}</h1>
             <h2>-By {Forum.postedBy?.fullName || "Anonymous"}</h2>
             <p>{Forum.description}</p>
 
             <button onClick={onLike}>Like</button>
             <p>Total Likes: {likes || 0}</p>
+
 
         </div>
     )

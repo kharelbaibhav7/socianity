@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ThumbsUp } from 'lucide-react';
 
 const ForumsPage = () => {
     const [forums, setForums] = useState([]);
@@ -41,7 +42,7 @@ const ForumsPage = () => {
                 }
             });
 
-            // Update likes dynamically
+            // Toggle like count dynamically
             setLikedPosts(prev => ({
                 ...prev,
                 [id]: result.data.result.likes.length
@@ -71,35 +72,41 @@ const ForumsPage = () => {
             {/* Forums List */}
             <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">Forums</h1>
             <div className="space-y-6">
-                {forums.map((forum) => (
-                    <motion.div
-                        key={forum._id}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between"
-                    >
-                        {/* Left Section - Title, Author, Description */}
-                        <div className="flex-1">
-                            <Link to={`/forums/${forum._id}`} className="block">
-                                <h2 className="text-2xl font-bold text-gray-800">{forum.title}</h2>
-                                <p className="text-gray-600 text-sm mt-1">
-                                    By <span className="font-semibold">{forum.postedBy ? forum.postedBy.fullName : 'Unknown Contributor'}</span>
-                                </p>
-                                <p className="text-gray-500 line-clamp-2 mt-2">{forum.description || 'No description available...'}</p>
-                            </Link>
-                        </div>
+                {forums.map((forum) => {
+                    const isLiked = likedPosts[forum._id] > forum.likes.length; // Check if liked
 
-                        {/* Right Section - Like Button */}
-                        <motion.button
-                            whileTap={{ scale: 0.9 }}
-                            onClick={() => handleLike(forum._id)}
-                            className={`flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition-all duration-300 ${likedPosts[forum._id] ? 'bg-gray-200' : ''
+                    return (
+                        <motion.div
+                            key={forum._id}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className={`rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between ${isLiked ? 'bg-gray-200' : 'bg-gray-100'
                                 }`}
                         >
-                            👍 {likedPosts[forum._id] || 0}
-                        </motion.button>
-                    </motion.div>
-                ))}
+                            {/* Left Section - Title, Author, Description */}
+                            <div className="flex-1">
+                                <Link to={`/forums/${forum._id}`} className="block">
+                                    <h2 className="text-2xl font-bold text-gray-800">{forum.title}</h2>
+                                    <p className="text-gray-600 text-sm mt-1">
+                                        By <span className="font-semibold">{forum.postedBy ? forum.postedBy.fullName : 'Unknown Contributor'}</span>
+                                    </p>
+                                    <p className="text-gray-500 line-clamp-2 mt-2">{forum.description || 'No description available...'}</p>
+                                </Link>
+                            </div>
+
+                            {/* Right Section - Like Button */}
+                            <motion.button
+                                whileTap={{ scale: 0.9 }}
+                                onClick={() => handleLike(forum._id)}
+                                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-300 ${isLiked ? 'bg-blue-500 text-white border-blue-600' : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-100'
+                                    }`}
+                            >
+                                <ThumbsUp size={20} />
+                                {likedPosts[forum._id] || 0}
+                            </motion.button>
+                        </motion.div>
+                    );
+                })}
             </div>
         </motion.div>
     );
@@ -110,15 +117,17 @@ export default ForumsPage;
 
 
 
+
+
 // import axios from 'axios';
 // import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
-// import { Heart, MessageCircle } from 'lucide-react';
 // import { motion } from 'framer-motion';
 
 // const ForumsPage = () => {
 //     const [forums, setForums] = useState([]);
 //     const [error, setError] = useState(null);
+//     const [likedPosts, setLikedPosts] = useState({});
 
 //     useEffect(() => {
 //         const fetchForums = async () => {
@@ -126,6 +135,12 @@ export default ForumsPage;
 //                 const response = await axios.get('http://localhost:8000/api/forums');
 //                 if (Array.isArray(response.data)) {
 //                     setForums(response.data);
+//                     // Initialize likedPosts based on fetched data
+//                     const initialLikes = {};
+//                     response.data.forEach((forum) => {
+//                         initialLikes[forum._id] = forum.likes.length;
+//                     });
+//                     setLikedPosts(initialLikes);
 //                 } else {
 //                     setError('Unexpected response format');
 //                 }
@@ -137,8 +152,33 @@ export default ForumsPage;
 //         fetchForums();
 //     }, []);
 
+//     const handleLike = async (id) => {
+//         try {
+//             const result = await axios({
+//                 method: 'post',
+//                 url: `http://localhost:8000/api/forums/${id}/like`,
+//                 headers: {
+//                     Authorization: `Bearer ${localStorage.getItem("token")}`
+//                 }
+//             });
+
+//             // Update likes dynamically
+//             setLikedPosts(prev => ({
+//                 ...prev,
+//                 [id]: result.data.result.likes.length
+//             }));
+//         } catch (error) {
+//             console.error('Error liking post:', error);
+//         }
+//     };
+
 //     return (
-//         <div className="container mx-auto p-6">
+//         <motion.div
+//             className="container mx-auto p-6"
+//             initial={{ opacity: 0, y: 20 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.5 }}
+//         >
 //             {/* Post Button */}
 //             <div className="flex justify-center my-6">
 //                 <Link
@@ -150,36 +190,45 @@ export default ForumsPage;
 //             </div>
 
 //             {/* Forums List */}
-//             <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">Forums</h1>
-//             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//             <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">Community Forums</h1>
+//             <div className="space-y-6">
 //                 {forums.map((forum) => (
 //                     <motion.div
 //                         key={forum._id}
-//                         whileHover={{ scale: 1.05 }}
-//                         whileTap={{ scale: 0.95 }}
-//                         className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl"
+//                         whileHover={{ scale: 1.02 }}
+//                         whileTap={{ scale: 0.98 }}
+//                         className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between"
 //                     >
-//                         <Link to={`/forums/${forum._id}`} className="block p-5">
-//                             <div className="flex justify-between items-center mb-2">
-//                                 <h2 className="text-xl font-bold text-gray-800">{forum.title}</h2>
-//                                 <div className="flex items-center text-gray-600 text-sm">
-//                                     <Heart className="size-5 text-red-500 mr-1" />
-//                                     {forum.likes.length}
-//                                 </div>
-//                             </div>
-//                             <p className="text-gray-600 text-sm mb-1">
-//                                 By <span className="font-semibold">{forum.postedBy ? forum.postedBy.fullName : 'Unknown Contributor'}</span>
-//                             </p>
-//                             <p className="text-gray-500 line-clamp-1">{forum.description || 'No description available...'}</p>
-//                         </Link>
+//                         {/* Left Section - Title, Author, Description */}
+//                         <div className="flex-1">
+//                             <Link to={`/forums/${forum._id}`} className="block">
+//                                 <h2 className="text-2xl font-bold text-gray-800">{forum.title}</h2>
+//                                 <p className="text-gray-600 text-sm mt-1">
+//                                     By <span className="font-semibold">{forum.postedBy ? forum.postedBy.fullName : 'Unknown Contributor'}</span>
+//                                 </p>
+//                                 <p className="text-gray-500 line-clamp-2 mt-2">{forum.description || 'No description available...'}</p>
+//                             </Link>
+//                         </div>
+
+//                         {/* Right Section - Like Button */}
+//                         <motion.button
+//                             whileTap={{ scale: 0.9 }}
+//                             onClick={() => handleLike(forum._id)}
+//                             className={`flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition-all duration-300 ${likedPosts[forum._id] ? 'bg-gray-200' : ''
+//                                 }`}
+//                         >
+//                             👍 {likedPosts[forum._id] || 0}
+//                         </motion.button>
 //                     </motion.div>
 //                 ))}
 //             </div>
-//         </div>
+//         </motion.div>
 //     );
 // };
 
 // export default ForumsPage;
+
+
 
 
 
