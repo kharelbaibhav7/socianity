@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { GlobalVariableContext } from "../App";
 import { Eye, EyeOff, Lock, Mail, MessageSquare, User } from "lucide-react";
+import toast from "react-hot-toast";
 
 
 const Signup = () => {
@@ -27,6 +28,7 @@ const Signup = () => {
             localStorage.setItem("token", result.data.token);
             setToken(result.data.token)
             console.log(result)
+            toast.success("Signup Success")
             navigate("/")
 
         } catch (error) {

@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react';
 import MyRoutes from './components/MyRoutes';
 import NavBar from './components/NavBar';
+import { Toaster } from "react-hot-toast";
 import "./pages/styles.css";
 
 

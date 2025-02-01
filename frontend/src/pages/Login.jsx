@@ -3,6 +3,7 @@ import { Eye, EyeOff, Lock, Mail, MessageSquare } from "lucide-react";
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GlobalVariableContext } from "../App";
+import toast from "react-hot-toast";
 
 const Login = () => {
     const [data, setData] = useState({})
@@ -25,6 +26,7 @@ const Login = () => {
             setToken(result.data.token)
             navigate("/")
             console.log(data)
+            toast.success("Login Success")
         } catch (error) {
             console.log(error.message);
         }
