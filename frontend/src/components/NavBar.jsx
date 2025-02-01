@@ -37,8 +37,8 @@ const NavBar = () => {
                         <NavLink to="/" className="flex items-center gap-2 hover:scale-105 transition-all"><Home size={20} /> Home</NavLink>
                         <NavLink to="/events" className="flex items-center gap-2 hover:scale-105 transition-all"><Calendar size={20} /> Events</NavLink>
                         <NavLink to="/fundraisings" className="flex items-center gap-2 hover:scale-105 transition-all"><HandHeart size={20} /> Fundraisings</NavLink>
-                        <NavLink to="/contributions" className="flex items-center gap-2 hover:scale-105 transition-all"><Users size={20} /> Contributions</NavLink>
                         <NavLink to="/forum" className="flex items-center gap-2 hover:scale-105 transition-all"><MessageSquare size={20} /> Forum</NavLink>
+                        <NavLink to="/contributions" className="flex items-center gap-2 hover:scale-105 transition-all"><Users size={20} /> Contributions</NavLink>
                         <NavLink to="/post" className="flex items-center gap-2 hover:scale-105 transition-all"><Plus size={20} /> Post</NavLink>
                         <NavLink to="/logout" className="flex items-center gap-2 hover:scale-105 transition-all text-red-200"><LogOut size={20} /> Logout</NavLink>
                     </>
