@@ -85,7 +85,7 @@ const SpecificFundraisings = () => {
                 <p className="text-lg text-gray-700 mb-2">Organizer: <span className="font-semibold">{fundraising.organizer ? fundraising.organizer.fullName : 'Unknown Organizer'}</span></p>
                 <div className="flex items-center gap-2 mb-4">
                     <CircleDollarSign className="text-green-500 w-6 h-6" />
-                    <p className="text-lg font-semibold">Target: ${fundraising.target}</p>
+                    <p className="text-lg font-semibold">Target: NRS {fundraising.target}</p>
                 </div>
                 <div className="flex items-center gap-2 mb-4">
                     <Phone className="text-blue-500 w-6 h-6" />
@@ -100,7 +100,7 @@ const SpecificFundraisings = () => {
                         transition={{ duration: 1 }}
                     ></motion.div>
                 </div>
-                <p className="text-lg font-semibold text-gray-800 mb-4">Raised: ${currentAmount} / ${fundraising.target}</p>
+                <p className="text-lg font-semibold text-gray-800 mb-4">Raised: NRS {currentAmount} / NRS {fundraising.target}</p>
                 <p className="text-lg text-gray-600 italic mb-4">{fundraising.description}</p>
 
                 <button
