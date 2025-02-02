@@ -2,7 +2,7 @@
 import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { GlobalVariableContext } from "../App";
-import { Menu, X, Home, Calendar, HandHeart, Users, MessageSquare, Plus, LogOut, LogIn, UserPlus } from "lucide-react";
+import { Menu, X, Home, Calendar, HandHeart, Users, MessageSquare, Plus, LogOut, LogIn, UserPlus, User } from "lucide-react";
 import { motion } from "framer-motion";
 
 const NavBar = () => {
@@ -40,6 +40,7 @@ const NavBar = () => {
                         <NavLink to="/forum" className="flex items-center gap-2 hover:scale-105 transition-all"><MessageSquare size={20} /> Forum</NavLink>
                         <NavLink to="/contributions" className="flex items-center gap-2 hover:scale-105 transition-all"><Users size={20} /> Contributions</NavLink>
                         <NavLink to="/post" className="flex items-center gap-2 hover:scale-105 transition-all"><Plus size={20} /> Post</NavLink>
+                        <NavLink to="/my-profile" className="flex items-center gap-2 hover:scale-105 transition-all"><User size={20} /> My-Profile</NavLink>
                         <NavLink to="/logout" className="flex items-center gap-2 hover:scale-105 transition-all text-red-200"><LogOut size={20} /> Logout</NavLink>
                     </>
                 ) : (

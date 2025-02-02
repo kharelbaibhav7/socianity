@@ -8,6 +8,10 @@ import expressAsyncHandler from "express-async-handler";
 const createForumPost = asyncHandler(async (req, res) => {
   const { title, description } = req.body;
 
+  
+
+  console.log(req.user.score);
+
   const forumPost = new Forum({
     title,
     description,

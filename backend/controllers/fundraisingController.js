@@ -75,9 +75,6 @@ const donateToFundraising = asyncHandler(async (req, res) => {
     });
     let email = req.user.fullName;
     console.log(email);
-
-
-    
   } else {
     res.status(404);
     throw new Error("Fundraising not found");

@@ -1,12 +1,24 @@
 import asyncHandler from "express-async-handler";
 import Event from "../models/eventModel.js";
 import { sendEmail } from "../middleware/sendMail.js";
+import User from "../models/userModel.js";
 
 // @desc    Create a new event
 // @route   POST /api/events
 // @access  Private
 const createEvent = asyncHandler(async (req, res) => {
   const { name, date, time, description } = req.body;
+
+  req.user.score = req.user.score + 100;
+  // console.log(req.user.score);
+
+  let createScoreUpdate = await User.findByIdAndUpdate(
+    req.user._id,
+    {
+      score: req.user.score,
+    },
+    { new: true }
+  );
 
   const event = new Event({
     organizer: req.user._id,
@@ -67,6 +79,17 @@ const deleteEvent = asyncHandler(async (req, res) => {
 const applyEventController = asyncHandler(async (req, res) => {
   console.log(req.user._id);
   let email = req.user.email;
+  req.user.score = req.user.score + 20;
+  console.log(req.user.score);
+
+  let scoreUpdate = await User.findByIdAndUpdate(
+    req.user._id,
+    {
+      score: req.user.score,
+    },
+    { new: true }
+  );
+  // console.log(scoreUpdate);
 
   await sendEmail({
     from: "AppliedEvent <kharelbaibhav7@gmail.com>",

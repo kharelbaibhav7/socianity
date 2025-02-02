@@ -20,6 +20,7 @@ import SpecificForumPage from "../pages/Forum/SpecificForumPage";
 import AddContributionPage from "../pages/Contribution/AddContributionPage";
 import HomePageLoggedin from "../pages/HomePageLoggedin";
 import ViewCertificate from "../pages/Certificate/ViewCertificate";
+import MyProfilePage from "../pages/MyProfilePage";
 
 
 // import SpecificEventPage from "../pages/SpecificEventPage";
@@ -95,6 +96,8 @@ const MyRoutes = () => {
                             <Route path="post/contribution" element={<AddContributionPage></AddContributionPage>}>
                             </Route>
                             <Route path="certificate/:id" element={<ViewCertificate></ViewCertificate>}>
+                            </Route>
+                            <Route path="my-profile" element={<MyProfilePage></MyProfilePage>}>
                             </Route>
 
 
