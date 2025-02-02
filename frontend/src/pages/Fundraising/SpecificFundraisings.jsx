@@ -31,7 +31,29 @@ const SpecificFundraisings = () => {
 
     const handleDonate = async () => {
         try {
-            let result = await axios.post(`http://localhost:8000/api/fundraising/${id}/donate`, { amount });
+            // let result = await axios.post(`http://localhost:8000/api/fundraising/${id}/donate`, { amount });
+            let result = await axios({
+                method: 'post',
+                url: `http://localhost:8000/api/fundraising/${id}/donate`,
+                data: {
+                    amount
+                },
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
+            })
+
+            let response = await axios({
+                method: "post",
+                url: `http://localhost:8000/certificate/create`,
+                data: {
+                    amount
+                },
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
+            })
+
             toast.success('Donation successful! 🙏');
             setCurrentAmount(result.data.currentAmount)
             console.log(result)

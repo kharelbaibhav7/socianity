@@ -19,6 +19,7 @@ import AddForumForm from "../pages/Forum/AddForumForm";
 import SpecificForumPage from "../pages/Forum/SpecificForumPage";
 import AddContributionPage from "../pages/Contribution/AddContributionPage";
 import HomePageLoggedin from "../pages/HomePageLoggedin";
+import ViewCertificate from "../pages/Certificate/ViewCertificate";
 
 
 // import SpecificEventPage from "../pages/SpecificEventPage";
@@ -93,6 +94,8 @@ const MyRoutes = () => {
                             </Route>
                             <Route path="post/contribution" element={<AddContributionPage></AddContributionPage>}>
                             </Route>
+                            <Route path="certificate/:id" element={<ViewCertificate></ViewCertificate>}>
+                            </Route>
 
 
                             <Route path="*" element={<div>404 PAGE</div>}></Route>
@@ -109,7 +112,8 @@ const MyRoutes = () => {
                                 path="login"
                                 element={<Login></Login>}
                             ></Route>
-
+                            <Route path="certificate/:id" element={<ViewCertificate></ViewCertificate>}>
+                            </Route>
 
                             <Route path="*" element={<div>404 PAGE</div>}></Route>
                         </>
