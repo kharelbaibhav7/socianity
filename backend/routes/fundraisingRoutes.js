@@ -16,6 +16,6 @@ router
   .get(getAllFundraisings);
 
 router.route("/:id").get(getFundraisingById);
-router.route("/:id/donate").post(donateToFundraising);
+router.route("/:id/donate").post(protect, donateToFundraising);
 
 export default router;

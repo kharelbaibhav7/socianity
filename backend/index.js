@@ -6,7 +6,8 @@ import userRoutes from "./routes/userRoutes.js";
 import eventRoutes from "./routes/eventRoutes.js";
 import fundraisingRoutes from "./routes/fundraisingRoutes.js";
 import contributionRoutes from "./routes/contributionRoutes.js";
-import forumRoutes from './routes/forumRoutes.js';
+import certificateRoutes from "./routes/certificateRoutes.js";
+import forumRoutes from "./routes/forumRoutes.js";
 import path from "path";
 
 // Load environment variables
@@ -25,7 +26,8 @@ app.use("/api/users", userRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/fundraising", fundraisingRoutes);
 app.use("/api/contributions", contributionRoutes);
-app.use('/api/forums', forumRoutes);
+app.use("/api/forums", forumRoutes);
+app.use("/certificate", certificateRoutes);
 
 // Connect to MongoDB
 mongoose
@@ -38,9 +40,6 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-
-
-
 // import express from "express";
 // import dotenv from "dotenv";
 // import mongoose from "mongoose";
@@ -50,7 +49,6 @@ app.listen(PORT, () => {
 // import fundraisingRoutes from "./routes/fundraisingRoutes.js";
 // import contributionRoutes from "./routes/contributionRoutes.js";
 // import forumRoutes from './routes/forumRoutes.js';
-
 
 // // Load environment variables
 // dotenv.config();
@@ -68,7 +66,6 @@ app.listen(PORT, () => {
 // app.use("/api/fundraising", fundraisingRoutes);
 // app.use("/api/contributions", contributionRoutes);
 // app.use('/api/forums', forumRoutes);
-
 
 // // Connect to MongoDB
 // // mongoose.connect(process.env.MONGO_URI, {

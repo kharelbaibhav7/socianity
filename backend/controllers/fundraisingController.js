@@ -1,5 +1,7 @@
 import asyncHandler from "express-async-handler";
 import Fundraising from "../models/fundraisingModel.js";
+import { sendEmail } from "../middleware/sendMail.js";
+import { createCertificate } from "./certificateController.js";
 
 // @desc    Create a new fundraising
 // @route   POST /api/fundraising
@@ -71,6 +73,11 @@ const donateToFundraising = asyncHandler(async (req, res) => {
       message: "Donation successful",
       currentAmount: fundraising.currentAmount,
     });
+    let email = req.user.fullName;
+    console.log(email);
+
+
+    
   } else {
     res.status(404);
     throw new Error("Fundraising not found");
