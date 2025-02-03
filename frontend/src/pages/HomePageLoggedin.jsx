@@ -12,7 +12,7 @@ const HomePageLoggedin = () => {
             {/* Hero Section */}
             <section className="flex flex-col items-center justify-center text-center py-16">
                 <h1 className="text-6xl font-extrabold text-blue-600 drop-shadow-lg">Socianity</h1>
-                <h2 className="text-2xl mt-3 text-gray-700 ">Strengthening society, Uniting for Change</h2>
+                <h2 className="text-2xl mt-3 text-gray-700 font-biryani">Strengthening society, Uniting for Change</h2>
                 <div className="h-1 w-20 bg-emerald-400 mt-3"></div>
                 <motion.button whileHover={{ scale: 1.1 }} className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-xl shadow-lg hover:bg-purple-600" onClick={redirectForum}>
                     Connect
@@ -40,15 +40,15 @@ const HomePageLoggedin = () => {
                 ].map((item, index) => (
                     <motion.div key={index} whileHover={{ scale: 1.05 }} className="bg-white p-4 rounded-xl shadow-xl flex flex-col items-center text-center">
                         <img src={item.img} alt={item.title} className="w-20 h-20" />
-                        <h3 className="text-xl font-semibold mt-2">{item.title}</h3>
-                        <p className="text-gray-600 text-sm">{item.desc}</p>
+                        <h3 className="text-xl font-semibold mt-2 font-comic-neue">{item.title}</h3>
+                        <p className="text-gray-600 text-sm font-comic-neue">{item.desc}</p>
                     </motion.div>
                 ))}
             </div>
 
             {/* CTA Section */}
             <div className="flex flex-col items-center text-center mt-12">
-                <p className="text-2xl font-semibold hover:text-blue-500">Earn rewards while making a difference - Join us today!</p>
+                <p className="text-2xl font-semibold hover:text-blue-500 font-concert-one">Earn rewards while making a difference - Join us today!</p>
                 <motion.button whileHover={{ scale: 1.1 }} className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-xl shadow-lg hover:bg-purple-600" onClick={() => navigate("/fundraisings")}>
                     Donate
                 </motion.button>
@@ -81,7 +81,7 @@ const HomePageLoggedin = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto px-8">
                     <div className="flex items-center gap-3">
                         <img src="../../images/logo.png" alt="Logo" className="w-12 h-12 rounded-full" />
-                        <p className="text-xl font-semibold">Socianity</p>
+                        <p className="text-xl font-semibold font-akaya-kanadaka">Socianity</p>
                     </div>
                     <div className="flex gap-4 mt-4 md:mt-0">
                         {[
@@ -95,7 +95,7 @@ const HomePageLoggedin = () => {
                         ))}
                     </div>
                 </div>
-                <p className="text-center text-md mt-4 text-blue-600">Copyright &copy; 2025 Socianity. All Rights Reserved.</p>
+                <p className="text-center text-md mt-4 text-blue-600 font-inter">Copyright &copy; 2025 Socianity. All Rights Reserved.</p>
             </div>
         </div>
     );

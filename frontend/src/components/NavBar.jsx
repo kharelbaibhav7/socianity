@@ -27,7 +27,7 @@ const NavBar = () => {
                     className="h-12 w-12 rounded-full shadow-lg"
                     whileHover={{ scale: 1.1 }}
                 />
-                <p className="text-xl font-bold text-white">Socianity</p>
+                <p className="text-xl font-bold text-white font-akaya-kanadaka">Socianity</p>
             </div>
 
             {/* Desktop Navigation */}
