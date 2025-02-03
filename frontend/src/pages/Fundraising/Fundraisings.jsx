@@ -50,7 +50,7 @@ const Fundraisings = () => {
               <p className="text-gray-600">Organizer: {fundraising.organizer ? fundraising.organizer.fullName : 'Unknown Organizer'}</p>
               <div className="mt-4 flex items-center gap-2">
                 <CircleDollarSign className="text-green-500 w-6 h-6" />
-                <p className="font-semibold text-lg text-gray-800">Raised: ${fundraising.currentAmount} / ${fundraising.target}</p>
+                <p className="font-semibold text-lg text-gray-800">Raised: NPR {fundraising.currentAmount} / NPR {fundraising.target}</p>
               </div>
               <div className="w-full bg-gray-200 h-2 rounded-full mt-2">
                 <div className="bg-green-500 h-2 rounded-full" style={{ width: `${Math.min(100, (fundraising.currentAmount / fundraising.target) * 100)}%` }}></div>
