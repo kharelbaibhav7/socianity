@@ -45,7 +45,7 @@ const ViewCertificate = () => {
                 <p className="text-gray-600 mt-2">For your generous contribution and unwavering support towards social causes.</p>
                 <div className="mt-4">
                     <Award size={40} className="text-blue-400 inline-block" />
-                    <p className="text-gray-700 mt-2 text-lg">Donation Amount: <span className="font-semibold text-green-600">${result.amount || "-"}</span></p>
+                    <p className="text-gray-700 mt-2 text-lg">Donation Amount: <span className="font-semibold text-green-600">NPR {result.amount || "-"}</span></p>
                 </div>
                 <p className="text-gray-500 mt-6">We sincerely appreciate your efforts in making the world a better place.</p>
                 <div className="mt-6 flex justify-center gap-4">
