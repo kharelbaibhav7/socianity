@@ -65,7 +65,7 @@ const NavBar = () => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
-                    className="absolute top-16 left-0 w-full bg-orange-500 p-4 shadow-lg rounded-b-3xl flex flex-col items-center space-y-3 text-white md:hidden"
+                    className="absolute top-16 left-0 w-full bg-blue-400 p-4 shadow-lg rounded-b-3xl flex flex-col items-center space-y-3 text-white md:hidden"
                 >
                     {token ? (
                         <>
