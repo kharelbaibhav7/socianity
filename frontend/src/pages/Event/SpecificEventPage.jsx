@@ -27,6 +27,7 @@ const SpecificEventPage = () => {
 
     const applyToEvent = async () => {
         try {
+            toast.success("Applied successfully");
 
             let response = await axios({
                 method: 'post',
@@ -35,7 +36,6 @@ const SpecificEventPage = () => {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
             });
-            toast.success("Applied successfully");
             console.log(response.data);
         } catch (err) {
             console.error("Error applying to event:", err.message);
